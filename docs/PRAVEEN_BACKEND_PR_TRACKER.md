@@ -11,7 +11,7 @@
 | PR | Status | Title | Main File/Area | LU |
 |----|--------|-------|----------------|----|
 | PR #1 | 🟢 | Data Ingestion | src/ingest.py | 2.2, 2.3, 2.15 |
-| PR #2 | ⬜ | Data Validation | src/validate.py | 2.3, 2.14, 2.18, 2.19, 2.20, 2.24 |
+| PR #2 | 🟢 | Data Validation | src/validate.py | 2.3, 2.14, 2.18, 2.19, 2.20, 2.24 |
 | PR #3 | ⬜ | Data Transformation | src/transform.py | 2.5, 2.18, 2.19, 2.21, 2.22, 2.25 |
 | PR #4 | ⬜ | Feature Engineering | src/features.py | 2.26, 2.27, 2.34 |
 | PR #5 | ⬜ | Risk Engine | src/risk_rules.py | 2.34, 2.35, 2.36 |
@@ -45,4 +45,29 @@ LU:
 
 Result:
 - Data ingestion implementation completed (CSV & JSON loading, schema validation, error handling)
-- Tested ingestion pipeline functions successfully
+- Ingestion pipeline functions tested and verified
+
+---
+
+### PR #2
+Status: 🟢 PR Created
+Branch: backend/lu-validation
+Commit: 58cf37390f39def8fd610ff2416703ded44c2a0d
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-validation
+Date: 2026-08-19
+
+Files:
+- src/validate.py
+
+LU:
+- 2.3
+- 2.14
+- 2.18
+- 2.19
+- 2.20
+- 2.24
+
+Result:
+- Data quality validation engine implemented (`DataQualityValidator`, `QualityRuleResult`, `ValidationReport`)
+- Verified schema integrity, null checks, foreign key validity, attendance enum validation, and assignment/assessment score bounds
+- 7 unit tests in `tests/test_validation.py` passed (100%)
