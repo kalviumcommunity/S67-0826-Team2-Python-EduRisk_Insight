@@ -12,7 +12,7 @@
 |----|--------|-------|----------------|----|
 | PR #1 | 🟢 | Data Ingestion | src/ingest.py | 2.2, 2.3, 2.15 |
 | PR #2 | 🟢 | Data Validation | src/validate.py | 2.3, 2.14, 2.18, 2.19, 2.20, 2.24 |
-| PR #3 | ⬜ | Data Transformation | src/transform.py | 2.5, 2.18, 2.19, 2.21, 2.22, 2.25 |
+| PR #3 | 🟢 | Data Transformation | src/transform.py | 2.5, 2.18, 2.19, 2.21, 2.22, 2.25 |
 | PR #4 | ⬜ | Feature Engineering | src/features.py | 2.26, 2.27, 2.34 |
 | PR #5 | ⬜ | Risk Engine | src/risk_rules.py | 2.34, 2.35, 2.36 |
 | PR #6 | ⬜ | Analytics Engine | src/analytics/ | 2.6, 2.28, 2.30, 2.32 |
@@ -71,3 +71,30 @@ Result:
 - Data quality validation engine implemented (`DataQualityValidator`, `QualityRuleResult`, `ValidationReport`)
 - Verified schema integrity, null checks, foreign key validity, attendance enum validation, and assignment/assessment score bounds
 - 7 unit tests in `tests/test_validation.py` passed (100%)
+
+---
+
+### PR #3
+Status: 🟢 PR Created
+Branch: backend/lu-transformation
+Commit: 80440f92187c02d99dfe81bc0f6f4ddbebc8c7e6
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-transformation
+Date: 2026-08-20
+
+Files:
+- src/transform.py
+- tests/test_transform.py
+
+LU:
+- 2.5
+- 2.18
+- 2.19
+- 2.21
+- 2.22
+- 2.25
+
+Result:
+- Data transformation and standardization pipeline implemented (`clean_and_transform_data`, `CleanedDatasets`)
+- Handles deduplication, string normalization, date parsing, invalid status pruning, score bound clipping [0, max_score], and foreign key referential integrity
+- 7 unit tests in `tests/test_transform.py` passed (100%), full suite (31 tests) passing (100%)
+
