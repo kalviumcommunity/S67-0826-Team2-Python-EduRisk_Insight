@@ -1,0 +1,15 @@
+[server]
+headless = true
+runOnSave = false
+maxUploadSize = 50
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#516600"
+backgroundColor = "#f7faf5"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#181d1a"
+font = "sans serif"
