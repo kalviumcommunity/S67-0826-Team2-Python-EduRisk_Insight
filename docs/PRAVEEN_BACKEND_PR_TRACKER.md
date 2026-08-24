@@ -14,7 +14,7 @@
 | PR #2 | 🟢 | Data Validation | src/validate.py | 2.3, 2.14, 2.18, 2.19, 2.20, 2.24 |
 | PR #3 | 🟢 | Data Transformation | src/transform.py | 2.5, 2.18, 2.19, 2.21, 2.22, 2.25 |
 | PR #4 | 🟢 | Feature Engineering | src/features.py | 2.26, 2.27, 2.34 |
-| PR #5 | ⬜ | Risk Engine | src/risk_rules.py | 2.34, 2.35, 2.36 |
+| PR #5 | 🟢 | Risk Engine | src/risk_rules.py | 2.34, 2.35, 2.36 |
 | PR #6 | ⬜ | Analytics Engine | src/analytics/ | 2.6, 2.28, 2.30, 2.32 |
 | PR #7 | ⬜ | Trend & Behaviour Analysis | src/analytics/ | 2.29, 2.31, 2.32 |
 | PR #8 | ⬜ | KPI & Business Metrics | analytics/KPI logic | 2.6, 2.30, 2.34 |
@@ -120,5 +120,33 @@ Result:
 - High-performance vectorized feature engineering engine implemented (`compute_student_course_features`)
 - Computes comprehensive attendance metrics (effective rate, recent rate, prior rate), assignment rates (completion rate, late submission rate, missing assignments count), assessment averages, and engagement trend classification (`improving`, `stable`, `declining`, `insufficient_data`)
 - 4 unit tests in `tests/test_features.py` passed (100%), full test suite (31 tests) passing (100%)
+
+---
+
+### PR #5
+Status: 🟢 PR Created
+Branch: backend/lu-risk-engine
+Commit: d8d877242ba027633c7a2056b57d7f8c76d3545e
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-risk-engine
+Date: 2026-08-24
+
+Files:
+- src/risk_rules.py
+- src/risk_explanations.py
+- config/risk_thresholds.yaml
+- tests/test_risk_engine.py
+
+LU:
+- 2.34
+- 2.35
+- 2.36
+
+Result:
+- Configurable rule-based risk scoring engine implemented (`RiskEngine`, `StudentRiskEvaluation`, `TriggeredReason`)
+- Loads YAML risk thresholds and scoring rules dynamically (`config/risk_thresholds.yaml`)
+- Transparent point accumulation with clear risk band assignment: High (Needs Review), Medium (Watch), Low (On Track)
+- Human-readable explainable reason serialization and advisor recommendation helpers (`src/risk_explanations.py`)
+- 4 unit tests in `tests/test_risk_engine.py` passed (100%), full test suite passing (100%)
+
 
 
