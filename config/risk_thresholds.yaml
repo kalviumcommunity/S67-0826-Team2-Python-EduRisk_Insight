@@ -1,0 +1,79 @@
+# StudentPulse AI - Risk Engine Configuration
+# All thresholds, point weights, and risk band cutoffs are defined here.
+# DO NOT hardcode these values in the business logic or presentation layers.
+
+risk_rules:
+  # Rule 1: Attendance Rate
+  attendance_below:
+    threshold_pct: 70.0
+    points: 3
+    code: "LOW_ATTENDANCE"
+    label: "Attendance rate below 70%"
+    description: "Overall course attendance has fallen below the 70% institutional support baseline."
+
+  # Rule 2: Recent Attendance Drop
+  recent_attendance_drop:
+    threshold_pts: 15.0
+    recent_window_days: 14
+    points: 2
+    code: "RECENT_ATTENDANCE_DROP"
+    label: "Recent attendance decline (>=15% drop)"
+    description: "Attendance in the last 14 days is at least 15 percentage points lower than the prior term average."
+
+  # Rule 3: Submission Completion Rate
+  submission_completion_below:
+    threshold_pct: 80.0
+    points: 3
+    code: "LOW_SUBMISSION_COMPLETION"
+    label: "Submission completion below 80%"
+    description: "Fewer than 80% of scheduled assignments have been submitted."
+
+  # Rule 4: Missing Assignments Count
+  missing_assignments_min:
+    threshold_count: 2
+    points: 3
+    code: "MISSING_ASSIGNMENTS"
+    label: "2 or more missing assignments"
+    description: "Two or more required assignments have no recorded submission."
+
+  # Rule 5: Late Submission Rate
+  late_submission_rate_above:
+    threshold_pct: 30.0
+    points: 1
+    code: "HIGH_LATE_SUBMISSION_RATE"
+    label: "Late submission rate > 30%"
+    description: "More than 30% of completed assignments were submitted past the due date."
+
+  # Rule 6: Academic Performance Average (Assignment or Assessment)
+  performance_below:
+    threshold_pct: 50.0
+    points: 3
+    code: "LOW_ACADEMIC_PERFORMANCE"
+    label: "Assignment or assessment average below 50%"
+    description: "Weighted assignment average or assessment score is below 50%."
+
+risk_bands:
+  low:
+    name: "On Track"
+    key: "Low"
+    min_score: 0
+    max_score: 2
+    color: "#516600"
+    badge_bg: "#dcfce7"
+    badge_text: "#14532d"
+  medium:
+    name: "Watch"
+    key: "Medium"
+    min_score: 3
+    max_score: 5
+    color: "#d97706"
+    badge_bg: "#fef0c7"
+    badge_text: "#93370d"
+  high:
+    name: "Needs Review"
+    key: "High"
+    min_score: 6
+    max_score: 99
+    color: "#ba1a1a"
+    badge_bg: "#ffdad6"
+    badge_text: "#93000a"
