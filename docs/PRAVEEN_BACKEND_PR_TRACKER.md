@@ -15,7 +15,7 @@
 | PR #3 | 🟢 | Data Transformation | src/transform.py | 2.5, 2.18, 2.19, 2.21, 2.22, 2.25 |
 | PR #4 | 🟢 | Feature Engineering | src/features.py | 2.26, 2.27, 2.34 |
 | PR #5 | 🟢 | Risk Engine | src/risk_rules.py | 2.34, 2.35, 2.36 |
-| PR #6 | ⬜ | Analytics Engine | src/analytics/ | 2.6, 2.28, 2.30, 2.32 |
+| PR #6 | 🟢 | Analytics Engine | src/analytics/ | 2.6, 2.28, 2.30, 2.32 |
 | PR #7 | ⬜ | Trend & Behaviour Analysis | src/analytics/ | 2.29, 2.31, 2.32 |
 | PR #8 | ⬜ | KPI & Business Metrics | analytics/KPI logic | 2.6, 2.30, 2.34 |
 | PR #9 | ⬜ | Insights & Anomaly Detection | src/insights.py | 2.28, 2.29, 2.35, 2.36 |
@@ -148,5 +148,29 @@ Result:
 - Human-readable explainable reason serialization and advisor recommendation helpers (`src/risk_explanations.py`)
 - 4 unit tests in `tests/test_risk_engine.py` passed (100%), full test suite passing (100%)
 
+---
 
+### PR #6
+Status: 🟢 PR Created
+Branch: backend/lu-analytics
+Commit: d3d6ed7fa0b7b6d7daae18a04f558a39eb0f887b
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-analytics
+Date: 2026-08-25
 
+Files:
+- analytics/__init__.py
+- analytics/cohort_analysis.py
+- analytics/profiling.py
+- tests/test_analytics.py
+
+LU:
+- 2.6
+- 2.28
+- 2.30
+- 2.32
+
+Result:
+- Descriptive analytics and cohort profiling engine implemented (`generate_cohort_profile`, `analyze_cohort_disparities`)
+- Computes comprehensive statistical distribution metrics across attendance, submission completion, quantiles, and engagement trends
+- Multi-dimensional cohort disparity aggregation across courses and sections with high-risk percentage rates
+- 5 unit tests in `tests/test_analytics.py` passed (100%), full test suite (36 tests) passing (100%)
