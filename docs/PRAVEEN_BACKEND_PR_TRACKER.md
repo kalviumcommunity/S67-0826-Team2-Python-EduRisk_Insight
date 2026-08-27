@@ -16,7 +16,7 @@
 | PR #4 | 🟢 | Feature Engineering | src/features.py | 2.26, 2.27, 2.34 |
 | PR #5 | 🟢 | Risk Engine | src/risk_rules.py | 2.34, 2.35, 2.36 |
 | PR #6 | 🟢 | Analytics Engine | src/analytics/ | 2.6, 2.28, 2.30, 2.32 |
-| PR #7 | ⬜ | Trend & Behaviour Analysis | src/analytics/ | 2.29, 2.31, 2.32 |
+| PR #7 | 🟢 | Trend & Behaviour Analysis | src/analytics/ | 2.29, 2.31, 2.32 |
 | PR #8 | ⬜ | KPI & Business Metrics | analytics/KPI logic | 2.6, 2.30, 2.34 |
 | PR #9 | ⬜ | Insights & Anomaly Detection | src/insights.py | 2.28, 2.29, 2.35, 2.36 |
 | PR #10 | ⬜ | Pipeline Orchestration | src/pipeline.py | 2.13, 2.58 |
@@ -174,3 +174,31 @@ Result:
 - Computes comprehensive statistical distribution metrics across attendance, submission completion, quantiles, and engagement trends
 - Multi-dimensional cohort disparity aggregation across courses and sections with high-risk percentage rates
 - 5 unit tests in `tests/test_analytics.py` passed (100%), full test suite (36 tests) passing (100%)
+
+---
+
+### PR #7
+Status: 🟢 PR Created
+Branch: backend/lu-trend-analysis
+Commit: 7a233571540916aef441daa225ec6aafdfddcefd
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-trend-analysis
+Date: 2026-08-27
+
+Files:
+- analytics/__init__.py
+- analytics/trend_analysis.py
+- analytics/behaviour_analysis.py
+- tests/test_analytics.py
+
+LU:
+- 2.29
+- 2.31
+- 2.32
+
+Result:
+- Longitudinal trend dynamics and student velocity trajectory engine implemented (`compute_weekly_trends`, `compute_student_trend_trajectories`)
+- Student submission punctuality profiling and turnaround delay analysis (`analyze_submission_behaviour`)
+- Consecutive unexcused absence streak detection and critical disengagement alerts (`detect_consecutive_absence_streaks`)
+- Institutional behavioural summary profile metrics (`generate_behavioural_profile`)
+- 16 unit tests in `tests/test_analytics.py` passed (100%), full test suite (38 tests) passing (100%)
+
