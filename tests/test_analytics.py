@@ -1,7 +1,8 @@
 """
 Unit tests for StudentPulse AI Analytics Engine.
 Tests statistical profiling (LU 2.28, LU 2.32), cohort disparity analysis (LU 2.6, LU 2.30),
-temporal trend analysis (LU 2.29), and student behaviour analytics (LU 2.31, LU 2.32).
+temporal trend analysis (LU 2.29), student behaviour analytics (LU 2.31, LU 2.32),
+and KPI & business metric aggregations (LU 2.6, LU 2.30, LU 2.34).
 """
 
 import pandas as pd
@@ -13,6 +14,12 @@ from analytics.behaviour_analysis import (
     generate_behavioural_profile,
 )
 from analytics.cohort_analysis import analyze_cohort_disparities
+from analytics.kpi_metrics import (
+    compute_course_level_kpis,
+    compute_disengagement_kpi_indicators,
+    compute_executive_kpis,
+    validate_sql_vs_python_kpis,
+)
 from analytics.profiling import generate_cohort_profile
 from analytics.trend_analysis import (
     compute_student_trend_trajectories,
@@ -308,3 +315,159 @@ def test_generate_behavioural_profile_empty():
     """Verifies profile generation handles empty input."""
     profile = generate_behavioural_profile(pd.DataFrame())
     assert profile == {}
+
+
+# -------------------------------------------------------------
+# KPI & Business Metrics Tests (LU 2.6, LU 2.30, LU 2.34)
+# -------------------------------------------------------------
+
+def test_compute_executive_kpis_valid(sample_features_df, sample_risk_df):
+    """Verifies calculation of institutional headline KPI metrics."""
+    kpis = compute_executive_kpis(sample_features_df, sample_risk_df)
+
+    assert isinstance(kpis, dict)
+    assert kpis["total_enrolled_students"] == 5
+    assert kpis["high_risk_count"] == 2
+    assert kpis["medium_risk_count"] == 1
+    assert kpis["low_risk_count"] == 2
+    assert kpis["high_risk_rate"] == 40.0
+    assert kpis["low_risk_rate"] == 40.0
+    assert kpis["avg_attendance_rate"] == pytest.approx(71.0, 0.1)
+    assert kpis["avg_submission_completion_rate"] == pytest.approx(71.0, 0.1)
+    assert kpis["avg_assessment_score"] == pytest.approx(69.1, 0.1)
+    assert kpis["on_track_rate"] == 40.0
+
+
+def test_compute_executive_kpis_filters(sample_features_df, sample_risk_df):
+    """Verifies filtering in executive KPI aggregation."""
+    # Filter for CS101 only
+    kpis_cs = compute_executive_kpis(sample_features_df, sample_risk_df, filters={"course_id": "CS101"})
+    assert kpis_cs["total_enrolled_students"] == 3
+    assert kpis_cs["high_risk_count"] == 1
+    assert kpis_cs["medium_risk_count"] == 1
+    assert kpis_cs["low_risk_count"] == 1
+
+    # Filter for non-existent course
+    kpis_empty = compute_executive_kpis(sample_features_df, sample_risk_df, filters={"course_id": "MATH999"})
+    assert kpis_empty["total_enrolled_students"] == 0
+    assert kpis_empty["high_risk_count"] == 0
+
+
+def test_compute_executive_kpis_empty():
+    """Verifies executive KPI computation handles empty inputs gracefully."""
+    kpis = compute_executive_kpis(pd.DataFrame(), pd.DataFrame())
+    assert isinstance(kpis, dict)
+    assert kpis["total_enrolled_students"] == 0
+    assert kpis["high_risk_count"] == 0
+    assert kpis["avg_attendance_rate"] == 0.0
+
+
+def test_compute_course_level_kpis_valid(sample_features_df, sample_risk_df):
+    """Verifies course scorecard aggregation and academic health score."""
+    course_kpis = compute_course_level_kpis(sample_features_df, sample_risk_df)
+
+    assert isinstance(course_kpis, pd.DataFrame)
+    assert not course_kpis.empty
+    assert len(course_kpis) == 3
+
+    cols = course_kpis.columns.tolist()
+    assert "course_id" in cols
+    assert "total_students" in cols
+    assert "high_risk_count" in cols
+    assert "high_risk_pct" in cols
+    assert "avg_attendance_rate" in cols
+    assert "avg_submission_rate" in cols
+    assert "avg_assessment_score" in cols
+    assert "academic_health_score" in cols
+
+    # Sorted by high_risk_pct descending: CS101 Sec B (100%), MATH201 Sec A (50%), CS101 Sec A (0%)
+    assert course_kpis.iloc[0]["course_id"] == "CS101"
+    assert course_kpis.iloc[0]["section"] == "B"
+    assert course_kpis.iloc[0]["high_risk_pct"] == 100.0
+
+
+def test_compute_course_level_kpis_empty():
+    """Verifies course scorecard handles empty data."""
+    res = compute_course_level_kpis(pd.DataFrame(), pd.DataFrame())
+    assert isinstance(res, pd.DataFrame)
+    assert res.empty
+
+
+def test_compute_disengagement_kpi_indicators_valid(sample_features_df):
+    """Verifies disengagement risk indicators and multi-risk student counts."""
+    indicators = compute_disengagement_kpi_indicators(sample_features_df)
+
+    assert isinstance(indicators, dict)
+    assert indicators["cohort_size"] == 5
+    assert "chronic_absenteeism_count" in indicators
+    assert "chronic_absenteeism_pct" in indicators
+    assert "critical_backlog_count" in indicators
+    assert "critical_backlog_pct" in indicators
+    assert "low_assessment_count" in indicators
+    assert "declining_engagement_count" in indicators
+    assert "multi_risk_student_count" in indicators
+
+    # S003 has attendance 50 (<70), missing 3 (>=2), assess 45 (<60), declining -> multi-risk
+    assert indicators["chronic_absenteeism_count"] == 2  # S003 (50), S005 (60)
+    assert indicators["critical_backlog_count"] == 2    # S003 (3), S005 (2)
+    assert indicators["multi_risk_student_count"] >= 1
+
+
+def test_compute_disengagement_kpi_indicators_empty():
+    """Verifies disengagement indicators handle empty input."""
+    res = compute_disengagement_kpi_indicators(pd.DataFrame())
+    assert res == {}
+
+
+def test_validate_sql_vs_python_kpis_pass():
+    """Verifies dual-engine validation PASS when differences are within tolerance."""
+    py_kpis = {
+        "total_enrolled_students": 100,
+        "high_risk_count": 15,
+        "medium_risk_count": 25,
+        "low_risk_count": 60,
+        "avg_attendance_rate": 82.45,
+        "avg_submission_completion_rate": 78.30,
+        "avg_assessment_score": 75.12,
+    }
+    sql_kpis = {
+        "total_enrolled_students": 100,
+        "high_risk_count": 15,
+        "medium_risk_count": 25,
+        "low_risk_count": 60,
+        "avg_attendance_rate": 82.46,  # 0.01 diff within tolerance 0.05
+        "avg_submission_completion_rate": 78.30,
+        "avg_assessment_score": 75.10,  # 0.02 diff within tolerance 0.05
+    }
+
+    report = validate_sql_vs_python_kpis(py_kpis, sql_kpis, tolerance=0.05)
+    assert report["overall_status"] == "PASS"
+    assert report["all_passed"] is True
+    assert len(report["metrics"]) == 7
+
+
+def test_validate_sql_vs_python_kpis_fail():
+    """Verifies dual-engine validation FAIL when discrepancy exceeds tolerance."""
+    py_kpis = {
+        "total_enrolled_students": 100,
+        "high_risk_count": 15,
+        "medium_risk_count": 25,
+        "low_risk_count": 60,
+        "avg_attendance_rate": 82.45,
+        "avg_submission_completion_rate": 78.30,
+        "avg_assessment_score": 75.12,
+    }
+    sql_kpis = {
+        "total_enrolled_students": 95,  # Count mismatch
+        "high_risk_count": 15,
+        "medium_risk_count": 25,
+        "low_risk_count": 55,
+        "avg_attendance_rate": 90.0,    # > 0.05 discrepancy
+        "avg_submission_completion_rate": 78.30,
+        "avg_assessment_score": 75.12,
+    }
+
+    report = validate_sql_vs_python_kpis(py_kpis, sql_kpis, tolerance=0.05)
+    assert report["overall_status"] == "FAIL"
+    assert report["all_passed"] is False
+
