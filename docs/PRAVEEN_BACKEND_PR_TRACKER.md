@@ -17,7 +17,7 @@
 | PR #5 | 🟢 | Risk Engine | src/risk_rules.py | 2.34, 2.35, 2.36 |
 | PR #6 | 🟢 | Analytics Engine | src/analytics/ | 2.6, 2.28, 2.30, 2.32 |
 | PR #7 | 🟢 | Trend & Behaviour Analysis | src/analytics/ | 2.29, 2.31, 2.32 |
-| PR #8 | ⬜ | KPI & Business Metrics | analytics/KPI logic | 2.6, 2.30, 2.34 |
+| PR #8 | 🟢 | KPI & Business Metrics | analytics/KPI logic | 2.6, 2.30, 2.34 |
 | PR #9 | ⬜ | Insights & Anomaly Detection | src/insights.py | 2.28, 2.29, 2.35, 2.36 |
 | PR #10 | ⬜ | Pipeline Orchestration | src/pipeline.py | 2.13, 2.58 |
 | PR #11 | ⬜ | Backend Testing | tests/ | Backend testing |
@@ -201,4 +201,31 @@ Result:
 - Consecutive unexcused absence streak detection and critical disengagement alerts (`detect_consecutive_absence_streaks`)
 - Institutional behavioural summary profile metrics (`generate_behavioural_profile`)
 - 16 unit tests in `tests/test_analytics.py` passed (100%), full test suite (38 tests) passing (100%)
+
+---
+
+### PR #8
+Status: 🟢 PR Created
+Branch: backend/lu-kpi-metrics
+Commit: 75bf645db4b1b7c6bc59e12d44aff56ded077016
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-kpi-metrics
+Date: 2026-08-31
+
+Files:
+- analytics/__init__.py
+- analytics/kpi_metrics.py
+- tests/test_analytics.py
+
+LU:
+- 2.6
+- 2.30
+- 2.34
+
+Result:
+- Executive headline academic KPI aggregation engine implemented (`compute_executive_kpis`)
+- Comparative course and section scorecard with composite academic health scoring (`compute_course_level_kpis`)
+- Institution-wide disengagement risk indicator profiling (`compute_disengagement_kpi_indicators`)
+- Dual-engine SQL vs. Python parity validation audit utility (`validate_sql_vs_python_kpis`)
+- 25 unit tests in `tests/test_analytics.py` passed (100%), full test suite (56 tests) passing (100%)
+
 
