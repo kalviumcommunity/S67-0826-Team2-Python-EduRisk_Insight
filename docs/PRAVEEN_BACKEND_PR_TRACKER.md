@@ -21,7 +21,7 @@
 | PR #9 | 🟢 | Insights & Anomaly Detection | src/insights.py | 2.28, 2.29, 2.35, 2.36 |
 | PR #10 | 🟢 | Pipeline Orchestration | src/pipeline.py | 2.13, 2.58 |
 | PR #11 | 🟢 | Backend Testing | tests/ | Backend testing |
-| PR #12 | ⬜ | Backend Integration | backend integration | 2.13, 2.26, 2.58 |
+| PR #12 | 🟢 | Backend Integration | backend integration | 2.13, 2.26, 2.58 |
 | PR #13 | ⬜ | Automated Pipeline Execution | pipeline/scripts | 2.13, 2.58 |
 | PR #14 | ⬜ | GitHub Validation / CI | .github/workflows/ | 2.59 |
 | PR #15 | ⬜ | Backend Documentation & Delivery | README/docs | 2.60 |
@@ -298,6 +298,35 @@ Result:
 - Comprehensive backend test suite covering acceptance criteria, database schema objects, validation rules, and reporting services
 - Verified explainability invariants (every flagged student with risk score > 0 has serialized human-readable reasons)
 - 59 total tests across the suite passing (100%)
+
+---
+
+### PR #12
+Status: 🟢 PR Created
+Branch: backend/lu-integration
+Commit: 180a677e4fb38e9dcce69a6a84dfa1d8db0cf7ff
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-integration
+Date: 2026-09-01
+
+Files:
+- src/__init__.py
+- src/database.py
+- src/reporting.py
+- sql/schema.sql
+- sql/reporting_views.sql
+- sql/kpi_validation.sql
+
+LU:
+- 2.13
+- 2.26
+- 2.58
+
+Result:
+- Relational SQLite schema DDL and performance index management (`src/database.py`, `sql/schema.sql`)
+- High-performance SQL reporting views created for zero-latency dashboard queries (`sql/reporting_views.sql`: `v_overview_kpis`, `v_risk_explorer`, `v_course_risk_summary`, `v_student_detail`, `v_data_quality_summary`)
+- Fully decoupled ReportingService layer with multi-dimensional filtering, student detail lookups, intervention action persistence, and top insight generation (`src/reporting.py`)
+- Dual SQL validation queries implemented (`sql/kpi_validation.sql`)
+
 
 
 
