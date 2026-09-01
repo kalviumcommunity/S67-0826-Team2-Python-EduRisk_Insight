@@ -335,7 +335,7 @@ def render_student_detail_page(service: ReportingService):
             staff_note_input = st.text_area(
                 "Private Staff Note",
                 placeholder="Enter confidential advisory notes, next steps, or student discussion outcomes...",
-                rows=3,
+                height=100,
                 key=f"staff_note_{sel_id}"
             )
             submit_btn = st.form_submit_button("Add Support Action", type="primary", use_container_width=True)
