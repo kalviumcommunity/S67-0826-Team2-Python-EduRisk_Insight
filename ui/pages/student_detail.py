@@ -163,6 +163,20 @@ def render_student_detail_page(service: ReportingService):
         rec_att = float(profile.get("recent_attendance_rate", att_rate))
         att_history = profile.get("attendance_history", [])
 
+        session_pills_html = ""
+        if att_history:
+            for item in att_history[:10]:
+                status = item.get("attendance_status", "Present")
+                dt = str(item.get("session_date", ""))[-5:]  # MM-DD
+                bg = "#dcfce7" if status == "Present" else ("#fef0c7" if status == "Late" else ("#ffdad6" if status == "Absent" else "#e5e9e4"))
+                fg = "#14532d" if status == "Present" else ("#93370d" if status == "Late" else ("#93000a" if status == "Absent" else "#474746"))
+                session_pills_html += f"""<div style="flex: 1; min-width: 40px; text-align: center; background-color: {bg}; color: {fg}; border-radius: 6px; padding: 6px 2px; font-size: 11px; font-weight: 600; border: 1px solid rgba(0,0,0,0.05);">
+<div>{dt}</div>
+<div style="font-size: 9px; text-transform: uppercase;">{status[:3]}</div>
+</div>"""
+        else:
+            session_pills_html = "<div style='font-size: 12px; color: #5f5e5e;'>No session attendance logs recorded for this course.</div>"
+
         st.markdown(f"""
         <div class="sp-card">
             <div class="sp-card-header">
@@ -190,26 +204,11 @@ def render_student_detail_page(service: ReportingService):
             <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #5f5e5e; font-family: 'Geist', sans-serif; margin-bottom: 8px;">
                 Recent Session Log (Latest 10 Sessions)
             </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                {session_pills_html}
+            </div>
+        </div>
         """, unsafe_allow_html=True)
-
-        if att_history:
-            log_cols = st.columns(min(len(att_history[:10]), 10))
-            for idx, item in enumerate(att_history[:10]):
-                status = item.get("attendance_status", "Present")
-                dt = str(item.get("session_date", ""))[-5:]  # MM-DD
-                bg = "#dcfce7" if status == "Present" else ("#fef0c7" if status == "Late" else ("#ffdad6" if status == "Absent" else "#e5e9e4"))
-                fg = "#14532d" if status == "Present" else ("#93370d" if status == "Late" else ("#93000a" if status == "Absent" else "#474746"))
-                with log_cols[idx]:
-                    st.markdown(f"""
-                    <div style="text-align: center; background-color: {bg}; color: {fg}; border-radius: 6px; padding: 6px 2px; font-size: 11px; font-weight: 600; border: 1px solid rgba(0,0,0,0.05);">
-                        <div>{dt}</div>
-                        <div style="font-size: 9px; text-transform: uppercase;">{status[:3]}</div>
-                    </div>
-                    """, unsafe_allow_html=True)
-        else:
-            st.info("No session attendance logs recorded for this course.")
-
-        st.markdown("</div>", unsafe_allow_html=True)
 
         # 3. Assignment Status Checklist
         asg_history = profile.get("assignment_history", [])

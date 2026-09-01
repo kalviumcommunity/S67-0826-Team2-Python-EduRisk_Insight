@@ -146,81 +146,67 @@ def render_risk_explorer_page(service: ReportingService):
             badge_info = format_support_badge(profile["risk_level"])
             reasons = profile.get("parsed_reasons", [])
             action_info = get_recommended_action(profile["risk_level"], reasons)
-
-            st.markdown(f"""
-            <div class="sp-card" style="border-top: 4px solid {badge_info['dot']};">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-                    <div>
-                        <h3 style="font-family: monospace; font-size: 22px; font-weight: 700; color: #181d1a; margin: 0;">{sel_id}</h3>
-                        <p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e; margin: 2px 0 0 0;">
-                            {profile.get('program', 'Data Analytics')} — Section {profile.get('section', 'A')}
-                        </p>
-                    </div>
-                    <span class="sp-badge {('sp-badge-high' if profile['risk_level'] == 'High' else ('sp-badge-medium' if profile['risk_level'] == 'Medium' else 'sp-badge-low'))}">
-                        <span class="sp-badge-dot"></span> {badge_info['label']}
-                    </span>
-                </div>
-
-                <!-- Status Alert Box -->
-                <div style="background-color: {badge_info['bg']}; border: 1px solid {badge_info['border']}; border-radius: 8px; padding: 12px; margin-bottom: 20px;">
-                    <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: {badge_info['text']};">
-                        Risk Score: {profile['risk_score']} pts
-                    </div>
-                    <div style="font-family: 'Inter', sans-serif; font-size: 12px; color: {badge_info['text']}; margin-top: 2px;">
-                        {len(reasons)} active indicator(s) triggered for qualified advisor review.
-                    </div>
-                </div>
-
-                <!-- Signal Breakdown -->
-                <div style="font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #5f5e5e; margin-bottom: 12px; border-bottom: 1px solid #ebefea; padding-bottom: 4px;">
-                    Signal Breakdown
-                </div>
-            """, unsafe_allow_html=True)
-
-            # Signal Item 1: Attendance
             att_val = profile.get("attendance_rate", 100.0)
             att_color = "#ba1a1a" if att_val < 70 else "#516600"
-            st.markdown(f"""
-            <div style="margin-bottom: 14px;">
-                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-                    <span style="display: flex; align-items: center; gap: 6px;">
-                        <span class="material-symbols-outlined" style="font-size: 16px; color: #5f5e5e;">calendar_today</span> Attendance
-                    </span>
-                    <strong style="color: {att_color}; font-family: monospace;">{att_val:.0f}%</strong>
-                </div>
-                <div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
-                    <div style="width: {min(att_val, 100.0)}%; height: 100%; background-color: {att_color}; border-radius: 9999px;"></div>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-
-            # Signal Item 2: Submissions
             missing_val = profile.get("missing_assignments", 0)
             miss_color = "#ba1a1a" if missing_val >= 2 else "#5f5e5e"
-            st.markdown(f"""
-            <div style="margin-bottom: 14px;">
-                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-                    <span style="display: flex; align-items: center; gap: 6px;">
-                        <span class="material-symbols-outlined" style="font-size: 16px; color: #5f5e5e;">assignment_late</span> Missing Work
-                    </span>
-                    <strong style="color: {miss_color}; font-family: monospace;">{missing_val} Missing</strong>
-                </div>
-                <div style="font-size: 11px; color: #5f5e5e;">Completion rate: {profile.get('submission_completion_rate', 100):.0f}%</div>
-            </div>
-            """, unsafe_allow_html=True)
+            prog_name = profile.get("program", "Data Analytics")
+            sec_name = profile.get("section", "A")
+            risk_badge_cls = "sp-badge-high" if profile["risk_level"] == "High" else ("sp-badge-medium" if profile["risk_level"] == "Medium" else "sp-badge-low")
 
-            # Recommended Action Section
-            st.markdown(f"""
-                <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #ebefea;">
-                    <div style="font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #5f5e5e; margin-bottom: 8px;">
-                        Recommended Action
-                    </div>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 12px; color: #181d1a; margin-bottom: 12px;">
-                        {action_info['description']}
-                    </p>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+            card_html = f"""<div class="sp-card" style="border-top: 4px solid {badge_info['dot']}; margin-bottom: 16px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+<div>
+<h3 style="font-family: monospace; font-size: 22px; font-weight: 700; color: #181d1a; margin: 0;">{sel_id}</h3>
+<p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e; margin: 2px 0 0 0;">
+{prog_name} — Section {sec_name}
+</p>
+</div>
+<span class="sp-badge {risk_badge_cls}">
+<span class="sp-badge-dot"></span> {badge_info['label']}
+</span>
+</div>
+<div style="background-color: {badge_info['bg']}; border: 1px solid {badge_info['border']}; border-radius: 8px; padding: 12px; margin-bottom: 20px;">
+<div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: {badge_info['text']};">
+Risk Score: {profile['risk_score']} pts
+</div>
+<div style="font-family: 'Inter', sans-serif; font-size: 12px; color: {badge_info['text']}; margin-top: 2px;">
+{len(reasons)} active indicator(s) triggered for qualified advisor review.
+</div>
+</div>
+<div style="font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #5f5e5e; margin-bottom: 12px; border-bottom: 1px solid #ebefea; padding-bottom: 4px;">
+Signal Breakdown
+</div>
+<div style="margin-bottom: 14px;">
+<div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+<span style="display: flex; align-items: center; gap: 6px;">
+<span class="material-symbols-outlined" style="font-size: 16px; color: #5f5e5e;">calendar_today</span> Attendance
+</span>
+<strong style="color: {att_color}; font-family: monospace;">{att_val:.0f}%</strong>
+</div>
+<div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
+<div style="width: {min(att_val, 100.0)}%; height: 100%; background-color: {att_color}; border-radius: 9999px;"></div>
+</div>
+</div>
+<div style="margin-bottom: 14px;">
+<div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+<span style="display: flex; align-items: center; gap: 6px;">
+<span class="material-symbols-outlined" style="font-size: 16px; color: #5f5e5e;">assignment_late</span> Missing Work
+</span>
+<strong style="color: {miss_color}; font-family: monospace;">{missing_val} Missing</strong>
+</div>
+<div style="font-size: 11px; color: #5f5e5e;">Completion rate: {profile.get('submission_completion_rate', 100):.0f}%</div>
+</div>
+<div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #ebefea;">
+<div style="font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #5f5e5e; margin-bottom: 8px;">
+Recommended Action
+</div>
+<p style="font-family: 'Inter', sans-serif; font-size: 12px; color: #181d1a; margin-bottom: 12px;">
+{action_info['description']}
+</p>
+</div>
+</div>"""
+            st.markdown(card_html, unsafe_allow_html=True)
 
             if st.button("View Full Profile →", key="view_profile_drawer_btn", type="primary", use_container_width=True):
                 st.session_state["current_page"] = "Student Detail"
