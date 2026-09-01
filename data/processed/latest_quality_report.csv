@@ -1,0 +1,15 @@
+run_id,table_name,rule_code,rule_name,status,severity,records_evaluated,records_failed,failure_rate,remediation_note,evaluated_at
+run_20260901_042557,students,STUDENTS_SCHEMA,Students schema contains required columns,PASS,High,3,0,0.0,All required columns present.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,students,STUDENTS_DUP_ID,Unique student IDs in students dimension,PASS,High,2500,0,0.0,Primary keys are unique.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,students,STUDENTS_NULL_CHECK,Null check on core student attributes,PASS,Medium,7500,0,0.0,No missing values in core fields.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,enrolments,ENROLMENTS_SCHEMA,Enrolments schema contains required columns,PASS,High,4,0,0.0,All required columns present.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,enrolments,ENROLMENTS_FK_STUDENT,Enrolment student_ids exist in Students dimension,PASS,High,5000,0,0.0,All student references match.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,enrolments,ENROLMENTS_DUP_CHECK,Unique student enrollment per course and term,PASS,Medium,5000,0,0.0,No duplicate enrollments detected.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,attendance,ATTENDANCE_SCHEMA,Attendance schema contains required columns,PASS,High,4,0,0.0,All required columns present.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,attendance,ATTENDANCE_STATUS_ENUM,"Attendance status belongs to allowed set (Present, Late, Absent, Excused)",PASS,High,100000,0,0.0,All attendance categories valid.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,attendance,ATTENDANCE_DATE_VALIDITY,Attendance session dates parse successfully,PASS,High,100000,0,0.0,All session dates valid.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,attendance,ATTENDANCE_DUP_CHECK,"Unique attendance log per student, course, and date",PASS,Medium,100000,0,0.0,No duplicate logs found.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,assignments,ASSIGNMENTS_SCHEMA,Assignments schema contains required columns,PASS,High,7,0,0.0,All required columns present.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,assignments,ASSIGNMENT_SCORE_RANGE,"Assignment scores within [0, max_score] bounds",PASS,High,17196,0,0.0,All recorded scores within bounds.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,assignments,ASSIGNMENT_DUE_DATE_VALIDITY,Assignment due dates parse successfully,PASS,High,20000,0,0.0,All due dates formatted properly.,2026-09-01T04:25:57.446745+00:00
+run_20260901_042557,assessments,ASSESSMENT_SCORE_RANGE,"Assessment scores within [0, max_score] bounds",PASS,High,10000,0,0.0,All exam scores valid.,2026-09-01T04:25:57.446745+00:00

@@ -1,0 +1,663 @@
+student_id,course_id,action_date,action_type,outcome_note,staff_user
+STU-1001,STAT-301,2026-09-21 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1006,STAT-301,2026-09-28 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1009,MATH-150,2026-02-23 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1009,STAT-301,2026-09-21 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1010,DATA-101,2026-10-26 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1010,MATH-150,2026-10-19 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1011,DATA-101,2026-03-16 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1013,STAT-301,2026-02-23 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1021,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1023,CS-204,2026-10-12 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1034,DATA-101,2026-02-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1048,MATH-150,2026-03-16 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1058,CS-204,2026-03-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1060,MATH-150,2026-02-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1062,DATA-101,2026-10-26 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1062,MATH-150,2026-10-26 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1063,STAT-301,2026-03-09 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1063,DATA-101,2026-10-19 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1068,CS-204,2026-10-26 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1073,MATH-150,2026-02-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1073,STAT-301,2026-09-28 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1081,CS-204,2026-09-21 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1082,DATA-101,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1084,MATH-150,2026-03-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1087,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1087,STAT-301,2026-10-19 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1090,DATA-101,2026-02-23 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1094,STAT-301,2026-10-12 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1103,DATA-101,2026-09-28 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1103,STAT-301,2026-03-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1108,CS-204,2026-02-16 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1112,CS-204,2026-03-02 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1119,CS-204,2026-10-19 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1119,STAT-301,2026-09-28 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1119,MATH-150,2026-03-02 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1127,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1128,STAT-301,2026-10-19 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1134,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1136,MATH-150,2026-03-02 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1141,MATH-150,2026-09-28 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1143,MATH-150,2026-10-19 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1145,CS-204,2026-09-28 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1147,MATH-150,2026-10-05 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1147,CS-204,2026-10-05 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1148,STAT-301,2026-10-19 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1150,STAT-301,2026-02-23 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1155,CS-204,2026-02-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1155,STAT-301,2026-10-19 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1162,STAT-301,2026-09-21 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1163,DATA-101,2026-09-21 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1171,CS-204,2026-09-28 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1177,DATA-101,2026-10-12 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1184,CS-204,2026-03-02 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1184,STAT-301,2026-03-02 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1184,DATA-101,2026-02-16 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1188,CS-204,2026-10-26 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1188,MATH-150,2026-03-16 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1193,MATH-150,2026-03-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1193,STAT-301,2026-03-16 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1197,MATH-150,2026-10-12 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1200,DATA-101,2026-10-19 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1200,STAT-301,2026-03-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1212,DATA-101,2026-03-02 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1217,DATA-101,2026-10-05 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1220,STAT-301,2026-10-12 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1225,DATA-101,2026-02-16 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1229,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1239,CS-204,2026-03-02 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1241,CS-204,2026-09-28 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1242,STAT-301,2026-10-19 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1245,CS-204,2026-09-21 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1250,DATA-101,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1253,DATA-101,2026-10-05 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1271,MATH-150,2026-10-19 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1271,DATA-101,2026-02-16 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1274,DATA-101,2026-10-19 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1276,MATH-150,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1285,STAT-301,2026-10-12 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1285,MATH-150,2026-02-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1292,STAT-301,2026-09-28 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1292,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1294,MATH-150,2026-09-21 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1300,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1302,DATA-101,2026-10-12 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1309,MATH-150,2026-03-16 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1309,CS-204,2026-03-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1309,DATA-101,2026-03-02 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1318,MATH-150,2026-10-12 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1318,STAT-301,2026-03-09 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1320,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1322,CS-204,2026-02-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1323,DATA-101,2026-02-16 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1327,MATH-150,2026-03-09 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1329,STAT-301,2026-10-19 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1331,DATA-101,2026-03-02 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1335,CS-204,2026-03-09 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1336,DATA-101,2026-10-19 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1337,CS-204,2026-10-26 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1338,STAT-301,2026-10-26 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1342,MATH-150,2026-02-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1347,DATA-101,2026-03-16 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1349,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1349,STAT-301,2026-02-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1351,STAT-301,2026-09-21 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1353,DATA-101,2026-03-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1356,DATA-101,2026-03-16 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1365,MATH-150,2026-02-23 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1365,DATA-101,2026-10-05 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1369,MATH-150,2026-09-28 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1374,MATH-150,2026-10-26 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1377,DATA-101,2026-02-16 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1378,MATH-150,2026-03-02 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1381,MATH-150,2026-10-19 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1392,DATA-101,2026-10-05 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1394,CS-204,2026-10-19 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1394,MATH-150,2026-09-21 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1405,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1413,STAT-301,2026-09-28 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1414,CS-204,2026-03-16 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1414,DATA-101,2026-09-28 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1416,DATA-101,2026-03-02 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1424,STAT-301,2026-09-28 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1426,MATH-150,2026-02-23 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1426,DATA-101,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1426,STAT-301,2026-03-02 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1434,CS-204,2026-10-26 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1434,MATH-150,2026-02-16 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1435,MATH-150,2026-10-05 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1438,MATH-150,2026-03-02 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1438,STAT-301,2026-02-23 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1441,STAT-301,2026-10-05 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1448,CS-204,2026-03-16 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1449,STAT-301,2026-10-05 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1451,MATH-150,2026-10-12 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1452,DATA-101,2026-03-09 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1458,MATH-150,2026-03-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1465,STAT-301,2026-10-12 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1466,CS-204,2026-02-16 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1466,DATA-101,2026-03-16 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1477,MATH-150,2026-10-12 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1482,CS-204,2026-03-02 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1482,DATA-101,2026-03-02 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1482,STAT-301,2026-10-12 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1493,STAT-301,2026-09-21 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1493,DATA-101,2026-03-09 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1494,STAT-301,2026-10-05 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1503,CS-204,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1503,STAT-301,2026-10-19 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1510,CS-204,2026-03-09 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1518,STAT-301,2026-03-02 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1518,MATH-150,2026-09-21 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1520,MATH-150,2026-10-12 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1520,DATA-101,2026-10-26 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1523,CS-204,2026-02-16 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1530,MATH-150,2026-03-02 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1538,STAT-301,2026-09-28 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1540,CS-204,2026-03-16 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1544,MATH-150,2026-09-21 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1546,CS-204,2026-09-21 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1548,DATA-101,2026-10-19 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1549,MATH-150,2026-09-28 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1555,CS-204,2026-10-26 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1555,MATH-150,2026-10-26 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1556,STAT-301,2026-03-02 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1558,DATA-101,2026-09-28 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1572,STAT-301,2026-10-12 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1573,MATH-150,2026-09-21 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1575,STAT-301,2026-09-28 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1576,MATH-150,2026-03-16 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1576,CS-204,2026-03-02 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1579,MATH-150,2026-02-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1583,STAT-301,2026-10-19 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1583,MATH-150,2026-03-16 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1588,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1588,STAT-301,2026-03-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1595,MATH-150,2026-02-16 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1599,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1603,DATA-101,2026-10-26 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1618,MATH-150,2026-02-23 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1619,DATA-101,2026-10-12 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1623,CS-204,2026-03-02 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1630,MATH-150,2026-02-16 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1638,STAT-301,2026-09-28 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1638,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1640,CS-204,2026-10-19 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1640,DATA-101,2026-10-26 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1644,CS-204,2026-10-12 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1659,CS-204,2026-09-28 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1659,DATA-101,2026-09-28 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1661,MATH-150,2026-03-02 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1661,STAT-301,2026-03-09 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1663,CS-204,2026-02-09 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1668,MATH-150,2026-03-02 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1670,STAT-301,2026-03-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1674,CS-204,2026-02-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1674,MATH-150,2026-09-28 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1676,DATA-101,2026-02-23 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1676,CS-204,2026-10-26 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1679,CS-204,2026-02-23 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1682,STAT-301,2026-02-09 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1683,STAT-301,2026-02-16 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1689,MATH-150,2026-02-23 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1694,STAT-301,2026-03-02 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1694,DATA-101,2026-10-26 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1702,MATH-150,2026-10-26 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1704,CS-204,2026-03-02 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1705,MATH-150,2026-10-05 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1712,CS-204,2026-03-16 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1723,DATA-101,2026-02-16 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1729,STAT-301,2026-02-09 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1729,MATH-150,2026-10-12 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1732,DATA-101,2026-02-16 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1735,MATH-150,2026-09-21 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1735,CS-204,2026-02-09 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1743,MATH-150,2026-10-26 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1746,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1749,CS-204,2026-10-26 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1751,MATH-150,2026-09-21 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1752,DATA-101,2026-10-26 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1752,STAT-301,2026-09-28 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1753,MATH-150,2026-10-26 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1755,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1759,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1759,MATH-150,2026-10-26 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1760,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1765,STAT-301,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1771,DATA-101,2026-10-19 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1774,MATH-150,2026-10-26 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1775,CS-204,2026-03-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1779,STAT-301,2026-02-23 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1780,DATA-101,2026-02-16 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1780,MATH-150,2026-03-02 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1787,STAT-301,2026-03-02 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1791,MATH-150,2026-10-12 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1791,STAT-301,2026-09-28 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1794,DATA-101,2026-02-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1796,DATA-101,2026-02-09 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1799,STAT-301,2026-03-16 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1801,STAT-301,2026-10-12 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1801,MATH-150,2026-02-16 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1802,DATA-101,2026-02-23 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1806,STAT-301,2026-02-09 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1806,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1806,MATH-150,2026-03-09 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1812,STAT-301,2026-02-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1812,DATA-101,2026-10-12 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1814,STAT-301,2026-03-02 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1817,CS-204,2026-03-16 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1824,CS-204,2026-03-09 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1824,DATA-101,2026-10-26 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1824,STAT-301,2026-03-09 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1827,DATA-101,2026-10-12 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1829,CS-204,2026-10-12 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1847,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1850,CS-204,2026-10-19 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1867,MATH-150,2026-09-21 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1873,MATH-150,2026-09-21 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1878,STAT-301,2026-09-28 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1886,DATA-101,2026-10-12 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1894,STAT-301,2026-09-21 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1897,MATH-150,2026-03-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1901,STAT-301,2026-10-05 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1904,STAT-301,2026-09-21 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1904,MATH-150,2026-03-02 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1907,MATH-150,2026-03-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1918,STAT-301,2026-02-09 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1920,CS-204,2026-09-28 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1920,DATA-101,2026-10-05 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1921,MATH-150,2026-02-16 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1935,MATH-150,2026-02-09 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1945,MATH-150,2026-09-28 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1950,MATH-150,2026-03-16 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1955,CS-204,2026-10-12 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1957,CS-204,2026-10-19 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1957,MATH-150,2026-09-28 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1957,DATA-101,2026-10-26 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1964,STAT-301,2026-03-02 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1967,DATA-101,2026-02-16 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1969,STAT-301,2026-10-12 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1969,CS-204,2026-02-23 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1971,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1971,DATA-101,2026-10-26 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1978,STAT-301,2026-10-05 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1979,MATH-150,2026-10-19 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1982,DATA-101,2026-03-16 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1982,STAT-301,2026-10-26 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1983,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1983,MATH-150,2026-03-09 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1985,DATA-101,2026-10-05 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1985,STAT-301,2026-02-23 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1988,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-1988,CS-204,2026-03-02 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-1988,DATA-101,2026-03-16 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-1993,DATA-101,2026-10-26 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-1996,CS-204,2026-10-12 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2001,DATA-101,2026-09-28 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2001,STAT-301,2026-02-16 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2001,CS-204,2026-09-28 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2002,CS-204,2026-03-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2002,DATA-101,2026-02-16 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2003,CS-204,2026-03-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2004,DATA-101,2026-10-19 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2005,STAT-301,2026-03-16 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2009,STAT-301,2026-10-26 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2010,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2014,MATH-150,2026-03-16 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2016,DATA-101,2026-03-09 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2020,MATH-150,2026-02-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2022,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2022,MATH-150,2026-09-21 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2023,MATH-150,2026-10-26 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2024,DATA-101,2026-10-05 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2029,STAT-301,2026-02-23 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2029,DATA-101,2026-09-28 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2032,CS-204,2026-03-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2033,MATH-150,2026-03-09 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2033,CS-204,2026-02-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2035,CS-204,2026-03-02 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2036,CS-204,2026-02-16 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2038,DATA-101,2026-02-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2042,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2044,DATA-101,2026-09-21 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2044,MATH-150,2026-09-28 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2046,MATH-150,2026-03-09 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2052,DATA-101,2026-02-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2058,DATA-101,2026-03-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2058,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2062,CS-204,2026-10-05 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2062,DATA-101,2026-09-28 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2068,CS-204,2026-09-21 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2068,STAT-301,2026-10-19 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2077,CS-204,2026-10-19 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2077,DATA-101,2026-09-28 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2090,CS-204,2026-03-02 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2093,MATH-150,2026-10-05 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2094,DATA-101,2026-03-09 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2097,MATH-150,2026-03-16 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2098,STAT-301,2026-02-23 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2101,MATH-150,2026-10-05 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2102,STAT-301,2026-03-02 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2105,MATH-150,2026-03-02 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2105,DATA-101,2026-10-05 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2106,MATH-150,2026-02-16 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2106,STAT-301,2026-09-28 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2107,MATH-150,2026-10-26 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2107,DATA-101,2026-03-02 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2114,DATA-101,2026-02-23 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2114,STAT-301,2026-10-19 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2118,CS-204,2026-09-28 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2118,DATA-101,2026-03-16 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2124,DATA-101,2026-02-16 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2126,STAT-301,2026-10-05 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2132,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2132,CS-204,2026-10-19 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2138,DATA-101,2026-09-28 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2139,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2142,CS-204,2026-10-19 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2152,MATH-150,2026-10-26 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2152,CS-204,2026-03-09 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2156,STAT-301,2026-10-19 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2157,MATH-150,2026-10-19 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2160,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2161,STAT-301,2026-02-23 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2165,DATA-101,2026-09-28 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2165,CS-204,2026-10-19 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2171,DATA-101,2026-10-26 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2177,CS-204,2026-02-16 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2200,DATA-101,2026-02-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2203,DATA-101,2026-10-19 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2205,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2205,MATH-150,2026-09-21 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2208,MATH-150,2026-02-16 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2209,DATA-101,2026-10-26 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2211,STAT-301,2026-10-05 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2214,DATA-101,2026-09-21 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2222,CS-204,2026-09-21 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2227,MATH-150,2026-10-26 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2233,MATH-150,2026-09-21 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2234,DATA-101,2026-09-21 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2234,STAT-301,2026-09-28 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2238,CS-204,2026-10-12 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2245,DATA-101,2026-03-02 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2246,STAT-301,2026-03-02 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2254,MATH-150,2026-10-12 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2255,MATH-150,2026-09-21 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2255,DATA-101,2026-10-19 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2257,DATA-101,2026-10-12 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2258,STAT-301,2026-10-19 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2260,DATA-101,2026-10-19 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2262,DATA-101,2026-03-02 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2277,CS-204,2026-03-09 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2278,MATH-150,2026-10-26 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2280,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2282,STAT-301,2026-03-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2286,DATA-101,2026-03-16 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2286,STAT-301,2026-03-02 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2291,MATH-150,2026-10-26 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2291,STAT-301,2026-09-28 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2293,DATA-101,2026-03-09 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2294,DATA-101,2026-03-09 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2296,CS-204,2026-03-16 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2298,MATH-150,2026-09-28 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2302,DATA-101,2026-09-21 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2303,DATA-101,2026-03-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2303,CS-204,2026-10-05 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2305,DATA-101,2026-10-19 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2307,DATA-101,2026-03-16 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2310,CS-204,2026-10-12 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2313,MATH-150,2026-10-26 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2313,DATA-101,2026-02-23 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2313,CS-204,2026-03-02 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2314,DATA-101,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2315,DATA-101,2026-03-16 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2323,DATA-101,2026-09-28 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2326,CS-204,2026-03-02 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2328,CS-204,2026-02-23 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2333,STAT-301,2026-03-16 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2334,STAT-301,2026-09-28 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2338,DATA-101,2026-03-02 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2343,STAT-301,2026-10-05 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2344,STAT-301,2026-03-16 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2348,MATH-150,2026-10-26 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2349,STAT-301,2026-09-28 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2357,DATA-101,2026-02-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2359,DATA-101,2026-09-21 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2360,STAT-301,2026-09-21 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2361,CS-204,2026-10-26 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2361,STAT-301,2026-03-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2363,DATA-101,2026-03-02 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2379,DATA-101,2026-03-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2382,DATA-101,2026-02-16 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2386,STAT-301,2026-02-23 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2386,DATA-101,2026-10-19 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2392,DATA-101,2026-09-21 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2394,STAT-301,2026-09-28 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2394,DATA-101,2026-10-05 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2397,DATA-101,2026-09-28 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2397,MATH-150,2026-03-02 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2401,MATH-150,2026-10-12 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2409,MATH-150,2026-02-09 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2412,MATH-150,2026-03-09 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2417,MATH-150,2026-10-19 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2421,MATH-150,2026-02-09 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2424,CS-204,2026-02-23 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2424,STAT-301,2026-10-19 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2427,MATH-150,2026-10-26 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2430,CS-204,2026-10-12 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2432,DATA-101,2026-10-12 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2438,CS-204,2026-02-16 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2438,DATA-101,2026-10-19 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2445,STAT-301,2026-09-28 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2445,DATA-101,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2449,MATH-150,2026-02-23 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2449,DATA-101,2026-09-28 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2453,STAT-301,2026-10-12 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2455,CS-204,2026-03-02 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2455,STAT-301,2026-09-28 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2459,STAT-301,2026-03-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2459,CS-204,2026-02-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2466,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2470,STAT-301,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2470,CS-204,2026-10-19 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2482,MATH-150,2026-03-02 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2482,STAT-301,2026-10-12 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2487,MATH-150,2026-03-09 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2487,STAT-301,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2495,STAT-301,2026-02-16 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2503,CS-204,2026-09-21 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2503,STAT-301,2026-10-19 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2505,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2506,DATA-101,2026-09-28 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2509,DATA-101,2026-03-09 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2509,STAT-301,2026-03-16 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2515,DATA-101,2026-03-16 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2521,STAT-301,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2525,MATH-150,2026-09-21 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2536,STAT-301,2026-09-21 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2536,CS-204,2026-10-19 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2538,STAT-301,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2538,DATA-101,2026-10-12 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2544,DATA-101,2026-10-26 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2544,STAT-301,2026-09-21 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2546,MATH-150,2026-10-12 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2546,DATA-101,2026-02-16 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2549,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2549,MATH-150,2026-02-09 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2552,CS-204,2026-02-16 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2555,MATH-150,2026-09-28 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2558,STAT-301,2026-02-16 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2558,DATA-101,2026-10-05 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2562,CS-204,2026-03-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2565,CS-204,2026-10-26 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2565,MATH-150,2026-10-05 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2568,CS-204,2026-02-16 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2568,MATH-150,2026-02-23 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2577,MATH-150,2026-02-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2580,DATA-101,2026-09-28 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2583,STAT-301,2026-03-16 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2592,CS-204,2026-10-05 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2599,CS-204,2026-09-21 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2603,CS-204,2026-10-19 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2604,MATH-150,2026-02-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2617,CS-204,2026-02-09 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2617,MATH-150,2026-09-21 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2619,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2624,MATH-150,2026-03-16 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2628,DATA-101,2026-10-05 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2631,DATA-101,2026-03-09 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2638,DATA-101,2026-02-09 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2642,DATA-101,2026-10-26 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2646,MATH-150,2026-03-02 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2646,STAT-301,2026-09-21 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2648,DATA-101,2026-03-02 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2649,STAT-301,2026-10-26 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2655,CS-204,2026-09-21 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2660,DATA-101,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2666,MATH-150,2026-02-09 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2668,MATH-150,2026-09-21 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2676,DATA-101,2026-09-21 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2681,MATH-150,2026-03-09 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2681,CS-204,2026-02-23 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2686,STAT-301,2026-10-05 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2688,STAT-301,2026-09-21 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2695,CS-204,2026-10-19 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2699,STAT-301,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2699,DATA-101,2026-02-23 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2703,DATA-101,2026-10-05 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2704,STAT-301,2026-02-09 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2704,CS-204,2026-02-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2708,STAT-301,2026-03-09 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2712,CS-204,2026-02-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2722,DATA-101,2026-09-21 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2723,STAT-301,2026-09-28 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2723,CS-204,2026-09-21 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2723,DATA-101,2026-10-26 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2725,CS-204,2026-10-19 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2739,DATA-101,2026-09-21 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2754,DATA-101,2026-02-16 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2755,DATA-101,2026-09-21 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2755,STAT-301,2026-10-12 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2761,STAT-301,2026-03-09 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2763,STAT-301,2026-09-28 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2763,MATH-150,2026-10-19 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2775,DATA-101,2026-02-23 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2776,CS-204,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2781,DATA-101,2026-09-28 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2781,STAT-301,2026-03-09 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2782,MATH-150,2026-10-19 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2783,DATA-101,2026-10-12 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2783,CS-204,2026-02-09 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2783,STAT-301,2026-02-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2784,MATH-150,2026-03-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2785,STAT-301,2026-10-26 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2787,CS-204,2026-02-16 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2798,CS-204,2026-03-02 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2798,STAT-301,2026-10-26 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2799,CS-204,2026-02-09 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2799,STAT-301,2026-03-02 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2799,DATA-101,2026-10-26 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2802,MATH-150,2026-03-16 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2802,STAT-301,2026-02-23 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2803,DATA-101,2026-02-16 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2807,MATH-150,2026-09-28 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2815,STAT-301,2026-10-26 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2822,DATA-101,2026-02-23 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2827,DATA-101,2026-02-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2828,DATA-101,2026-09-21 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2830,CS-204,2026-09-28 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2830,MATH-150,2026-10-19 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2831,MATH-150,2026-09-21 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2831,STAT-301,2026-10-12 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2835,DATA-101,2026-03-02 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2842,MATH-150,2026-02-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2844,MATH-150,2026-10-26 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2845,MATH-150,2026-10-05 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2845,STAT-301,2026-02-23 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2846,STAT-301,2026-10-26 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2846,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2852,MATH-150,2026-10-05 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2852,DATA-101,2026-02-23 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2854,DATA-101,2026-10-19 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2854,STAT-301,2026-10-19 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2858,MATH-150,2026-03-02 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2859,DATA-101,2026-02-09 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2866,MATH-150,2026-10-05 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2866,CS-204,2026-09-28 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2880,MATH-150,2026-09-28 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2885,STAT-301,2026-03-16 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2894,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2894,STAT-301,2026-10-19 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2902,STAT-301,2026-02-23 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2902,MATH-150,2026-03-02 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2904,DATA-101,2026-10-26 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2910,STAT-301,2026-10-19 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2910,MATH-150,2026-09-28 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2917,CS-204,2026-02-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2932,CS-204,2026-03-02 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2937,MATH-150,2026-10-05 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2940,STAT-301,2026-03-16 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2946,MATH-150,2026-09-21 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2947,CS-204,2026-10-12 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2947,MATH-150,2026-10-12 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2948,STAT-301,2026-10-12 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2957,MATH-150,2026-02-16 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2957,DATA-101,2026-03-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2958,STAT-301,2026-02-16 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2958,CS-204,2026-09-21 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2965,DATA-101,2026-09-21 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2968,STAT-301,2026-02-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-2977,STAT-301,2026-03-16 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2978,MATH-150,2026-10-26 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2979,CS-204,2026-03-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-2980,CS-204,2026-09-21 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-2980,MATH-150,2026-10-26 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2986,STAT-301,2026-09-28 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-2994,STAT-301,2026-03-02 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3003,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3004,DATA-101,2026-10-26 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3004,STAT-301,2026-02-09 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3004,CS-204,2026-10-19 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3016,CS-204,2026-02-09 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3016,MATH-150,2026-10-26 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3019,DATA-101,2026-02-23 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3019,CS-204,2026-03-09 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3025,CS-204,2026-09-21 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3027,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3028,CS-204,2026-03-16 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3029,STAT-301,2026-10-19 00:00:00,Attendance Nudge Email,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3030,CS-204,2026-03-02 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3032,DATA-101,2026-02-16 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3033,DATA-101,2026-02-16 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3035,CS-204,2026-09-21 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3035,MATH-150,2026-03-09 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3047,CS-204,2026-03-02 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3053,STAT-301,2026-10-12 00:00:00,1:1 Advisor Check-in,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3055,MATH-150,2026-10-12 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3064,STAT-301,2026-03-02 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3064,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3068,CS-204,2026-03-09 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3073,MATH-150,2026-03-02 00:00:00,Tutoring Center Referral,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3076,STAT-301,2026-02-09 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3084,MATH-150,2026-10-19 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3084,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3085,STAT-301,2026-10-12 00:00:00,Attendance Nudge Email,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3088,DATA-101,2026-02-09 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3092,CS-204,2026-10-19 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3104,MATH-150,2026-03-16 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3104,DATA-101,2026-10-26 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3106,STAT-301,2026-03-16 00:00:00,Office Hours Meeting,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3106,CS-204,2026-10-05 00:00:00,Office Hours Meeting,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
+STU-3107,CS-204,2026-10-26 00:00:00,Attendance Nudge Email,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3111,MATH-150,2026-02-23 00:00:00,Office Hours Meeting,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3112,CS-204,2026-10-26 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3112,MATH-150,2026-03-09 00:00:00,1:1 Advisor Check-in,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3117,CS-204,2026-02-23 00:00:00,Office Hours Meeting,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3117,STAT-301,2026-10-26 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3124,DATA-101,2026-03-02 00:00:00,1:1 Advisor Check-in,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3125,MATH-150,2026-02-16 00:00:00,Tutoring Center Referral,Referred to math learning lab for supplementary tutoring on exam preparation.,Dr. Maya
+STU-3125,STAT-301,2026-03-09 00:00:00,Tutoring Center Referral,Sent reminder regarding unsubmitted homework; student indicated intent to complete.,Dr. Maya
+STU-3129,STAT-301,2026-02-09 00:00:00,1:1 Advisor Check-in,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3130,STAT-301,2026-02-23 00:00:00,Attendance Nudge Email,Reviewed attendance expectations; student agreed to office hours follow-up.,Dr. Maya
+STU-3130,CS-204,2026-10-12 00:00:00,Tutoring Center Referral,Student discussed balancing part-time employment hours with assignment deadlines.,Dr. Maya
