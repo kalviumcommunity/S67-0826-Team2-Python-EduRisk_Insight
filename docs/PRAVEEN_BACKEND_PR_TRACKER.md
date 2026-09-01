@@ -18,7 +18,7 @@
 | PR #6 | 🟢 | Analytics Engine | src/analytics/ | 2.6, 2.28, 2.30, 2.32 |
 | PR #7 | 🟢 | Trend & Behaviour Analysis | src/analytics/ | 2.29, 2.31, 2.32 |
 | PR #8 | 🟢 | KPI & Business Metrics | analytics/KPI logic | 2.6, 2.30, 2.34 |
-| PR #9 | ⬜ | Insights & Anomaly Detection | src/insights.py | 2.28, 2.29, 2.35, 2.36 |
+| PR #9 | 🟢 | Insights & Anomaly Detection | src/insights.py | 2.28, 2.29, 2.35, 2.36 |
 | PR #10 | ⬜ | Pipeline Orchestration | src/pipeline.py | 2.13, 2.58 |
 | PR #11 | ⬜ | Backend Testing | tests/ | Backend testing |
 | PR #12 | ⬜ | Backend Integration | backend integration | 2.13, 2.26, 2.58 |
@@ -227,5 +227,31 @@ Result:
 - Institution-wide disengagement risk indicator profiling (`compute_disengagement_kpi_indicators`)
 - Dual-engine SQL vs. Python parity validation audit utility (`validate_sql_vs_python_kpis`)
 - 25 unit tests in `tests/test_analytics.py` passed (100%), full test suite (56 tests) passing (100%)
+
+---
+
+### PR #9
+Status: 🟢 PR Created
+Branch: backend/lu-insights
+Commit: 6d47ee6d4b5847e30d7bbcebe803f25c754685ff
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-insights
+Date: 2026-09-01
+
+Files:
+- src/insights.py
+- tests/test_insights.py
+
+LU:
+- 2.28
+- 2.29
+- 2.35
+- 2.36
+
+Result:
+- Dynamic cohort insights generator implemented (`generate_cohort_insights`, `InsightFinding`)
+- Produces evidence-backed, explainable findings across section risk concentration, primary risk indicator drivers, and 14-day engagement trajectories
+- Dynamic fallback handling for empty or unpopulated cohorts
+- 3 unit tests in `tests/test_insights.py` passed (100%), full test suite (59 tests) passing (100%)
+
 
 
