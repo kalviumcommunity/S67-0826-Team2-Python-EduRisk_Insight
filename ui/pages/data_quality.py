@@ -6,7 +6,7 @@ and offers real-time institutional rule auditing.
 """
 
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict
 import streamlit as st
 import pandas as pd
 
@@ -29,14 +29,12 @@ def render_data_quality_page(service: ReportingService):
     # -------------------------------------------------------------
     head_left, head_right = st.columns([3, 1])
     with head_left:
-        st.markdown("""
-        <div style="margin-bottom: 20px;">
-            <h2 style="font-family: 'Geist', sans-serif; font-size: 28px; font-weight: 700; color: #181d1a; margin-bottom: 4px;">Data Quality & Integrity</h2>
-            <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #5f5e5e; margin: 0;">
-                Continuous institutional data validation, foreign key integrity, and ingestion health monitoring.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown("""<div style="margin-bottom: 20px;">
+<h2 style="font-family: 'Geist', sans-serif; font-size: 28px; font-weight: 700; color: #181d1a; margin-bottom: 4px;">Data Quality & Integrity</h2>
+<p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #5f5e5e; margin: 0;">
+Continuous institutional data validation, foreign key integrity, and ingestion health monitoring.
+</p>
+</div>""", unsafe_allow_html=True)
 
     with head_right:
         if st.button("↻ Run Validation Audit", key="run_val_btn", type="primary", use_container_width=True):
@@ -55,16 +53,15 @@ def render_data_quality_page(service: ReportingService):
     # -------------------------------------------------------------
     # Interactive CSV Dataset Ingestion Studio
     # -------------------------------------------------------------
-    st.markdown("""
-    <div class="sp-card" style="margin-bottom: 24px;">
-        <div class="sp-card-header">
-            <span>📂 Real-Time CSV Dataset Ingestion Studio</span>
-        </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e; margin: 0 0 16px 0;">
-            Upload your institutional CSV datasets below. You can drag and drop multiple CSV files at once or select them individually. 
-            When activated, the system automatically validates schemas, cleans anomalies, computes engagement features, evaluates risk rules, and updates all dashboard views in real time.
-        </p>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="sp-card" style="margin-bottom: 20px;">
+<div class="sp-card-header" style="margin-bottom: 8px;">
+<span>📂 Real-Time CSV Dataset Ingestion Studio</span>
+</div>
+<p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e; margin: 0;">
+Upload your institutional CSV datasets below. You can drag and drop multiple CSV files at once or select them individually. 
+When activated, the system automatically validates schemas, cleans anomalies, computes engagement features, evaluates risk rules, and updates all dashboard views in real time.
+</p>
+</div>""", unsafe_allow_html=True)
 
     upload_specs = {
         "students.csv": {"label": "1. Students (students.csv)", "req_cols": ["student_id", "program", "cohort_year"], "required": True},
@@ -130,15 +127,13 @@ def render_data_quality_page(service: ReportingService):
                 n_rows = len(detected_dfs[target_name])
                 row_count_str = f"<div style='font-size: 11px; color: #516600;'>{n_rows:,} records detected</div>"
 
-            st.markdown(f"""
-            <div style="padding: 10px 14px; background-color: #ffffff; border: 1px solid #ebefea; border-radius: 8px; margin-bottom: 10px;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <strong style="font-size: 12px; color: #181d1a;">{target_name}</strong>
-                    <span style="font-size: 11px; color: {status_color}; font-weight: 600;">{status_text}</span>
-                </div>
-                {row_count_str}
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown(f"""<div style="padding: 10px 14px; background-color: #ffffff; border: 1px solid #ebefea; border-radius: 8px; margin-bottom: 10px;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<strong style="font-size: 12px; color: #181d1a;">{target_name}</strong>
+<span style="font-size: 11px; color: {status_color}; font-weight: 600;">{status_text}</span>
+</div>
+{row_count_str}
+</div>""", unsafe_allow_html=True)
 
     has_required_files = all(k in detected_dfs for k in ["students.csv", "enrolments.csv", "attendance.csv", "assignments.csv", "assessments.csv"])
 
@@ -177,7 +172,7 @@ def render_data_quality_page(service: ReportingService):
             missing = [k for k in ["students.csv", "enrolments.csv", "attendance.csv", "assignments.csv", "assessments.csv"] if k not in detected_dfs]
             st.warning(f"Missing: {', '.join(missing)}")
 
-    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("<div style='margin-bottom: 24px;'></div>", unsafe_allow_html=True)
 
     # Fetch latest validation report data
     dq_df = service.get_data_quality_report()
@@ -193,32 +188,28 @@ def render_data_quality_page(service: ReportingService):
     # Summary Metric Banner (Matches Stitch design)
     # -------------------------------------------------------------
     gauge_color = "#516600" if health_score >= 90 else ("#d97706" if health_score >= 75 else "#ba1a1a")
-    st.markdown(f"""
-    <div class="sp-card" style="display: flex; align-items: center; gap: 32px; padding: 28px; margin-bottom: 24px;">
-        <div style="width: 90px; height: 90px; border-radius: 50%; border: 6px solid #ebefea; display: flex; align-items: center; justify-content: center; position: relative; background-color: #ffffff; flex-shrink: 0;">
-            <span style="font-family: 'Geist', sans-serif; font-size: 24px; font-weight: 700; color: {gauge_color};">
-                {health_score:.0f}%
-            </span>
-        </div>
-        <div>
-            <div style="font-family: 'Geist', sans-serif; font-size: 32px; font-weight: 700; color: #181d1a; line-height: 1.1; margin-bottom: 4px;">
-                {health_score:.1f}% Data Quality Health
-            </div>
-            <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: #5f5e5e; margin: 0; max-width: 650px;">
-                {passed_rules} of {total_rules} institutional validation rules verified. Active student records, attendance logs, and assignment gradebooks are synchronized and ready for risk analysis.
-            </p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown(f"""<div class="sp-card" style="display: flex; align-items: center; gap: 32px; padding: 28px; margin-bottom: 24px;">
+<div style="width: 90px; height: 90px; border-radius: 50%; border: 6px solid #ebefea; display: flex; align-items: center; justify-content: center; position: relative; background-color: #ffffff; flex-shrink: 0;">
+<span style="font-family: 'Geist', sans-serif; font-size: 24px; font-weight: 700; color: {gauge_color};">
+{health_score:.0f}%
+</span>
+</div>
+<div>
+<div style="font-family: 'Geist', sans-serif; font-size: 32px; font-weight: 700; color: #181d1a; line-height: 1.1; margin-bottom: 4px;">
+{health_score:.1f}% Data Quality Health
+</div>
+<p style="font-family: 'Inter', sans-serif; font-size: 14px; color: #5f5e5e; margin: 0; max-width: 650px;">
+{passed_rules} of {total_rules} institutional validation rules verified. Active student records, attendance logs, and assignment gradebooks are synchronized and ready for risk analysis.
+</p>
+</div>
+</div>""", unsafe_allow_html=True)
 
     # -------------------------------------------------------------
     # Source Health Bento Grid (4 cards: Attendance, Assignments, Assessments, Enrolments)
     # -------------------------------------------------------------
-    st.markdown("""
-    <div style="font-family: 'Geist', sans-serif; font-size: 16px; font-weight: 600; color: #181d1a; margin-bottom: 12px;">
-        Source Data Feeds Health
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div style="font-family: 'Geist', sans-serif; font-size: 16px; font-weight: 600; color: #181d1a; margin-bottom: 12px;">
+Source Data Feeds Health
+</div>""", unsafe_allow_html=True)
 
     # Fetch table row counts
     try:
@@ -232,96 +223,87 @@ def render_data_quality_page(service: ReportingService):
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.markdown(f"""
-        <div class="sp-card" style="padding: 18px; margin-bottom: 0; height: 100%;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <div style="display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: #181d1a;">
-                    <span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 18px;">calendar_today</span> Attendance
-                </div>
-                <span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Live</span>
-            </div>
-            <div style="font-size: 11px; color: #5f5e5e; display: flex; justify-content: space-between; margin-bottom: 4px;">
-                <span>Total Records</span>
-                <strong style="color: #181d1a; font-family: monospace;">{att_count:,}</strong>
-            </div>
-            <div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden; margin-top: 8px;">
-                <div style="width: 100%; height: 100%; background-color: #516600;"></div>
-            </div>
-            <div style="font-size: 10px; color: #516600; font-weight: 600; text-align: right; margin-top: 4px;">100% Valid Enum</div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"""<div class="sp-card" style="padding: 18px; margin-bottom: 0; height: 100%;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+<div style="display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: #181d1a;">
+<span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 18px;">calendar_today</span> Attendance
+</div>
+<span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Live</span>
+</div>
+<div style="font-size: 11px; color: #5f5e5e; display: flex; justify-content: space-between; margin-bottom: 4px;">
+<span>Total Records</span>
+<strong style="color: #181d1a; font-family: monospace;">{att_count:,}</strong>
+</div>
+<div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden; margin-top: 8px;">
+<div style="width: 100%; height: 100%; background-color: #516600;"></div>
+</div>
+<div style="font-size: 10px; color: #516600; font-weight: 600; text-align: right; margin-top: 4px;">100% Valid Enum</div>
+</div>""", unsafe_allow_html=True)
 
     with col2:
-        st.markdown(f"""
-        <div class="sp-card" style="padding: 18px; margin-bottom: 0; height: 100%;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <div style="display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: #181d1a;">
-                    <span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 18px;">assignment</span> Assignments
-                </div>
-                <span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Live</span>
-            </div>
-            <div style="font-size: 11px; color: #5f5e5e; display: flex; justify-content: space-between; margin-bottom: 4px;">
-                <span>Total Submissions</span>
-                <strong style="color: #181d1a; font-family: monospace;">{asg_count:,}</strong>
-            </div>
-            <div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden; margin-top: 8px;">
-                <div style="width: 100%; height: 100%; background-color: #516600;"></div>
-            </div>
-            <div style="font-size: 10px; color: #516600; font-weight: 600; text-align: right; margin-top: 4px;">Scores [0, 100] Bound</div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"""<div class="sp-card" style="padding: 18px; margin-bottom: 0; height: 100%;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+<div style="display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: #181d1a;">
+<span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 18px;">assignment</span> Assignments
+</div>
+<span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Live</span>
+</div>
+<div style="font-size: 11px; color: #5f5e5e; display: flex; justify-content: space-between; margin-bottom: 4px;">
+<span>Total Submissions</span>
+<strong style="color: #181d1a; font-family: monospace;">{asg_count:,}</strong>
+</div>
+<div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden; margin-top: 8px;">
+<div style="width: 100%; height: 100%; background-color: #516600;"></div>
+</div>
+<div style="font-size: 10px; color: #516600; font-weight: 600; text-align: right; margin-top: 4px;">Scores [0, 100] Bound</div>
+</div>""", unsafe_allow_html=True)
 
     with col3:
-        st.markdown(f"""
-        <div class="sp-card" style="padding: 18px; margin-bottom: 0; height: 100%;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <div style="display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: #181d1a;">
-                    <span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 18px;">quiz</span> Assessments
-                </div>
-                <span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Live</span>
-            </div>
-            <div style="font-size: 11px; color: #5f5e5e; display: flex; justify-content: space-between; margin-bottom: 4px;">
-                <span>Total Exam Logs</span>
-                <strong style="color: #181d1a; font-family: monospace;">{asm_count:,}</strong>
-            </div>
-            <div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden; margin-top: 8px;">
-                <div style="width: 100%; height: 100%; background-color: #516600;"></div>
-            </div>
-            <div style="font-size: 10px; color: #516600; font-weight: 600; text-align: right; margin-top: 4px;">Standard Formats</div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"""<div class="sp-card" style="padding: 18px; margin-bottom: 0; height: 100%;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+<div style="display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: #181d1a;">
+<span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 18px;">quiz</span> Assessments
+</div>
+<span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Live</span>
+</div>
+<div style="font-size: 11px; color: #5f5e5e; display: flex; justify-content: space-between; margin-bottom: 4px;">
+<span>Total Exam Logs</span>
+<strong style="color: #181d1a; font-family: monospace;">{asm_count:,}</strong>
+</div>
+<div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden; margin-top: 8px;">
+<div style="width: 100%; height: 100%; background-color: #516600;"></div>
+</div>
+<div style="font-size: 10px; color: #516600; font-weight: 600; text-align: right; margin-top: 4px;">Standard Formats</div>
+</div>""", unsafe_allow_html=True)
 
     with col4:
-        st.markdown(f"""
-        <div class="sp-card" style="padding: 18px; margin-bottom: 0; height: 100%;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <div style="display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: #181d1a;">
-                    <span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 18px;">how_to_reg</span> Enrolments
-                </div>
-                <span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Live</span>
-            </div>
-            <div style="font-size: 11px; color: #5f5e5e; display: flex; justify-content: space-between; margin-bottom: 4px;">
-                <span>Total Enrollments</span>
-                <strong style="color: #181d1a; font-family: monospace;">{enr_count:,}</strong>
-            </div>
-            <div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden; margin-top: 8px;">
-                <div style="width: 100%; height: 100%; background-color: #516600;"></div>
-            </div>
-            <div style="font-size: 10px; color: #516600; font-weight: 600; text-align: right; margin-top: 4px;">Foreign Keys Verified</div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"""<div class="sp-card" style="padding: 18px; margin-bottom: 0; height: 100%;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+<div style="display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; color: #181d1a;">
+<span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 18px;">how_to_reg</span> Enrolments
+</div>
+<span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Live</span>
+</div>
+<div style="font-size: 11px; color: #5f5e5e; display: flex; justify-content: space-between; margin-bottom: 4px;">
+<span>Total Enrollments</span>
+<strong style="color: #181d1a; font-family: monospace;">{enr_count:,}</strong>
+</div>
+<div style="width: 100%; height: 6px; background-color: #ebefea; border-radius: 9999px; overflow: hidden; margin-top: 8px;">
+<div style="width: 100%; height: 100%; background-color: #516600;"></div>
+</div>
+<div style="font-size: 10px; color: #516600; font-weight: 600; text-align: right; margin-top: 4px;">Foreign Keys Verified</div>
+</div>""", unsafe_allow_html=True)
 
     st.markdown("<div style='margin-top: 28px;'></div>", unsafe_allow_html=True)
 
     # -------------------------------------------------------------
     # Active Data Quality Rules Audit Table
     # -------------------------------------------------------------
-    st.markdown("""
-    <div class="sp-card">
-        <div class="sp-card-header">
-            <span>Institutional Data Quality Audit Rules (14 Rules)</span>
-        </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="sp-card" style="margin-bottom: 16px;">
+<div class="sp-card-header" style="margin-bottom: 0;">
+<span>Institutional Data Quality Audit Rules (14 Rules)</span>
+</div>
+</div>""", unsafe_allow_html=True)
 
     if not dq_df.empty:
         # Filter dropdown for Severity
@@ -364,12 +346,10 @@ def render_data_quality_page(service: ReportingService):
             with c2:
                 st.markdown(f"<span style='font-family: monospace; font-size: 11px; color: #5f5e5e;'>{r_code}</span>", unsafe_allow_html=True)
             with c3:
-                st.markdown(f"""
-                <div>
-                    <div style="font-weight: 600; font-size: 12px; color: #181d1a;">{r_name}</div>
-                    <div style="font-size: 11px; color: #5f5e5e;">{remed}</div>
-                </div>
-                """, unsafe_allow_html=True)
+                st.markdown(f"""<div>
+<div style="font-weight: 600; font-size: 12px; color: #181d1a;">{r_name}</div>
+<div style="font-size: 11px; color: #5f5e5e;">{remed}</div>
+</div>""", unsafe_allow_html=True)
             with c4:
                 st.markdown(f"<span class='sp-badge {sev_badge}'>{sev}</span>", unsafe_allow_html=True)
             with c5:
@@ -381,25 +361,21 @@ def render_data_quality_page(service: ReportingService):
     else:
         st.info("No active data quality reports logged. Click 'Run Validation Audit' above.")
 
-    st.markdown("</div>", unsafe_allow_html=True)
-
     # -------------------------------------------------------------
     # Pipeline Execution History
     # -------------------------------------------------------------
     try:
         pipeline_df = service.db.query_dataframe("SELECT * FROM pipeline_runs ORDER BY started_at DESC LIMIT 5")
         if not pipeline_df.empty:
-            st.markdown("""
-            <div class="sp-card">
-                <div class="sp-card-header">
-                    <span>Recent Automated Pipeline Executions</span>
-                </div>
-            """, unsafe_allow_html=True)
+            st.markdown("""<div class="sp-card" style="margin-top: 24px; margin-bottom: 16px;">
+<div class="sp-card-header" style="margin-bottom: 0;">
+<span>Recent Automated Pipeline Executions</span>
+</div>
+</div>""", unsafe_allow_html=True)
 
             disp_df = pipeline_df[["run_id", "started_at", "status", "total_students", "total_enrolments", "high_risk_count", "duration_seconds"]].copy()
             disp_df.columns = ["Run ID", "Execution Timestamp", "Status", "Students", "Enrollments", "High Risk Count", "Duration (s)"]
             st.dataframe(disp_df, use_container_width=True, hide_index=True)
-            st.markdown("</div>", unsafe_allow_html=True)
     except Exception:
         pass
 

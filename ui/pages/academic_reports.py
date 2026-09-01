@@ -25,14 +25,12 @@ def render_academic_reports_page(service: ReportingService):
     # -------------------------------------------------------------
     # Page Header
     # -------------------------------------------------------------
-    st.markdown("""
-    <div style="margin-bottom: 24px;">
-        <h2 style="font-family: 'Geist', sans-serif; font-size: 28px; font-weight: 700; color: #181d1a; margin-bottom: 4px;">Academic Reports</h2>
-        <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #5f5e5e; margin: 0;">
-            Generate evidence-backed cohort insights, cross-sectional disparities, and executive summaries.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div style="margin-bottom: 24px;">
+<h2 style="font-family: 'Geist', sans-serif; font-size: 28px; font-weight: 700; color: #181d1a; margin-bottom: 4px;">Academic Reports</h2>
+<p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #5f5e5e; margin: 0;">
+Generate evidence-backed cohort insights, cross-sectional disparities, and executive summaries.
+</p>
+</div>""", unsafe_allow_html=True)
 
     # Filter Bar
     filter_opts = service.get_filter_options()
@@ -60,29 +58,27 @@ def render_academic_reports_page(service: ReportingService):
 
     with col_left:
         # Report Card 1: Weekly Engagement Summary
-        st.markdown("""
-        <div class="sp-card" style="border: 2px solid #516600; margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
-                <div>
-                    <h3 style="font-family: 'Geist', sans-serif; font-size: 18px; font-weight: 600; color: #181d1a; margin: 0 0 4px 0;">
-                        Weekly Engagement & Risk Summary
-                    </h3>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e; margin: 0; line-height: 1.4;">
-                        Aggregated LMS activity, attendance trends, assignment submissions, and student support flags across all active course sections.
-                    </p>
-                </div>
-                <span class="material-symbols-outlined" style="color: #516600; font-size: 32px;">analytics</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #ebefea; padding-top: 14px; margin-top: 14px;">
-                <span style="font-family: 'Geist', sans-serif; font-size: 11px; text-transform: uppercase; color: #5f5e5e;">
-                    Last Generated: Today at 09:14 AM
-                </span>
-                <div style="display: flex; gap: 8px;">
-                    <span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Ready for Download</span>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown("""<div class="sp-card" style="border: 2px solid #516600; margin-bottom: 20px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+<div>
+<h3 style="font-family: 'Geist', sans-serif; font-size: 18px; font-weight: 600; color: #181d1a; margin: 0 0 4px 0;">
+Weekly Engagement & Risk Summary
+</h3>
+<p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e; margin: 0; line-height: 1.4;">
+Aggregated LMS activity, attendance trends, assignment submissions, and student support flags across all active course sections.
+</p>
+</div>
+<span class="material-symbols-outlined" style="color: #516600; font-size: 32px;">analytics</span>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #ebefea; padding-top: 14px; margin-top: 14px;">
+<span style="font-family: 'Geist', sans-serif; font-size: 11px; text-transform: uppercase; color: #5f5e5e;">
+Last Generated: Today at 09:14 AM
+</span>
+<div style="display: flex; gap: 8px;">
+<span class="sp-badge sp-badge-low"><span class="sp-badge-dot"></span> Ready for Download</span>
+</div>
+</div>
+</div>""", unsafe_allow_html=True)
 
         # Download actions for Report 1
         students_df = service.get_risk_students(filters)
@@ -100,21 +96,19 @@ def render_academic_reports_page(service: ReportingService):
         st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
 
         # Report Card 2: Course Disparity & Risk Review
-        st.markdown("""
-        <div class="sp-card" style="margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
-                <div>
-                    <h3 style="font-family: 'Geist', sans-serif; font-size: 18px; font-weight: 600; color: #181d1a; margin: 0 0 4px 0;">
-                        Course & Section Disparity Review
-                    </h3>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e; margin: 0; line-height: 1.4;">
-                        Evaluates systemic engagement and score differences across departmental offerings and course sections.
-                    </p>
-                </div>
-                <span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 32px;">health_and_safety</span>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown("""<div class="sp-card" style="margin-bottom: 20px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+<div>
+<h3 style="font-family: 'Geist', sans-serif; font-size: 18px; font-weight: 600; color: #181d1a; margin: 0 0 4px 0;">
+Course & Section Disparity Review
+</h3>
+<p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e; margin: 0; line-height: 1.4;">
+Evaluates systemic engagement and score differences across departmental offerings and course sections.
+</p>
+</div>
+<span class="material-symbols-outlined" style="color: #5f5e5e; font-size: 32px;">health_and_safety</span>
+</div>
+</div>""", unsafe_allow_html=True)
 
         # Interactive Plotly Disparity Bar Chart
         if not course_summary_df.empty:
@@ -123,56 +117,53 @@ def render_academic_reports_page(service: ReportingService):
 
     with col_right:
         # Report Preview / Dynamic Cohort Findings Box (Matches Stitch design)
-        st.markdown("""
-        <div class="sp-card" style="background-color: #f1f5ef; border: 1px solid #c4c9ac;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                <span class="material-symbols-outlined" style="color: #516600;">visibility</span>
-                <h3 style="font-family: 'Geist', sans-serif; font-size: 16px; font-weight: 600; color: #181d1a; margin: 0;">
-                    Dynamic Cohort Findings Preview
-                </h3>
-            </div>
-        """, unsafe_allow_html=True)
-
+        findings_html = ""
         if insights:
             for item in insights:
                 icon_color = "#ba1a1a" if item.severity == "High" else ("#d97706" if item.severity == "Medium" else "#516600")
                 bg_card = "#ffdad6" if item.severity == "High" else ("#fef0c7" if item.severity == "Medium" else "#ffffff")
                 border_card = "#ffb4ab" if item.severity == "High" else ("#fde68a" if item.severity == "Medium" else "#ebefea")
 
-                st.markdown(f"""
-                <div style="background-color: {bg_card}; border: 1px solid {border_card}; border-radius: 8px; padding: 14px; margin-bottom: 12px;">
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                        <span class="material-symbols-outlined" style="color: {icon_color}; font-size: 20px;">{item.icon}</span>
-                        <strong style="font-family: 'Geist', sans-serif; font-size: 13px; color: #181d1a;">{item.title}</strong>
-                    </div>
-                    <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #181d1a; margin-bottom: 4px; line-height: 1.3;">
-                        {item.headline}
-                    </div>
-                    <div style="font-family: 'Inter', sans-serif; font-size: 12px; color: #5f5e5e; line-height: 1.4;">
-                        {item.description}
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
+                findings_html += f"""<div style="background-color: {bg_card}; border: 1px solid {border_card}; border-radius: 8px; padding: 14px; margin-bottom: 12px;">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+<span class="material-symbols-outlined" style="color: {icon_color}; font-size: 20px;">{item.icon}</span>
+<strong style="font-family: 'Geist', sans-serif; font-size: 13px; color: #181d1a;">{item.title}</strong>
+</div>
+<div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #181d1a; margin-bottom: 4px; line-height: 1.3;">
+{item.headline}
+</div>
+<div style="font-family: 'Inter', sans-serif; font-size: 12px; color: #5f5e5e; line-height: 1.4;">
+{item.description}
+</div>
+</div>"""
         else:
-            st.info("No cohort findings generated for the current filter criteria.")
+            findings_html = "<div style='font-size: 13px; color: #5f5e5e; padding: 8px 0;'>No cohort findings generated for the current filter criteria.</div>"
+
+        preview_card_html = f"""<div class="sp-card" style="background-color: #f1f5ef; border: 1px solid #c4c9ac; margin-bottom: 16px;">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+<span class="material-symbols-outlined" style="color: #516600;">visibility</span>
+<h3 style="font-family: 'Geist', sans-serif; font-size: 16px; font-weight: 600; color: #181d1a; margin: 0;">
+Dynamic Cohort Findings Preview
+</h3>
+</div>
+{findings_html}
+</div>"""
+        st.markdown(preview_card_html, unsafe_allow_html=True)
 
         if st.button("Generate Fresh Report", key="gen_fresh_rep_btn", type="primary", use_container_width=True):
             st.success("✓ Fresh cohort analysis report generated.")
             st.rerun()
-
-        st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("<div style='margin-top: 28px;'></div>", unsafe_allow_html=True)
 
     # -------------------------------------------------------------
     # Bottom Section: Section Breakdown & Disparity Table
     # -------------------------------------------------------------
-    st.markdown("""
-    <div class="sp-card">
-        <div class="sp-card-header">
-            <span>Course Section Performance & Risk Breakdown</span>
-        </div>
-    """, unsafe_allow_html=True)
+    st.markdown("""<div class="sp-card" style="margin-bottom: 16px;">
+<div class="sp-card-header" style="margin-bottom: 0;">
+<span>Course Section Performance & Risk Breakdown</span>
+</div>
+</div>""", unsafe_allow_html=True)
 
     try:
         features_all = service.db.query_dataframe("SELECT * FROM student_course_features")
@@ -193,7 +184,5 @@ def render_academic_reports_page(service: ReportingService):
             st.info("No section comparison data available.")
     except Exception as e:
         st.error(f"Could not compute section breakdown: {str(e)}")
-
-    st.markdown("</div>", unsafe_allow_html=True)
 
     render_disclaimer()

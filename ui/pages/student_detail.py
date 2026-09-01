@@ -67,35 +67,38 @@ def render_student_detail_page(service: ReportingService):
     # -------------------------------------------------------------
     # Profile Header matching Stitch design
     # -------------------------------------------------------------
-    st.markdown(f"""
-    <div style="display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid #c4c9ac; padding-bottom: 18px; margin-bottom: 24px; margin-top: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
-            <div>
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 4px;">
-                    <h1 style="font-family: 'Geist', sans-serif; font-size: 32px; font-weight: 700; color: #181d1a; margin: 0; letter-spacing: -0.02em;">
-                        {profile['student_id']}
-                    </h1>
-                    <span class="sp-badge {('sp-badge-high' if profile['risk_level'] == 'High' else ('sp-badge-medium' if profile['risk_level'] == 'Medium' else 'sp-badge-low'))}">
-                        <span class="sp-badge-dot"></span> {badge_info['label']}
-                    </span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 12px; font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e;">
-                    <span><strong>Program:</strong> {profile.get('program', 'Data Analytics')}</span>
-                    <span>•</span>
-                    <span><strong>Course:</strong> {profile.get('course_id', 'DATA-101')} ({profile.get('term', 'Fall 2026')})</span>
-                    <span>•</span>
-                    <span><strong>Section:</strong> {profile.get('section', 'A')}</span>
-                    <span>•</span>
-                    <span><strong>Cohort:</strong> Class of {profile.get('cohort_year', 2026)}</span>
-                </div>
-            </div>
-            <div style="display: flex; gap: 8px; align-items: center;">
-                <span class="material-symbols-outlined" style="color: #516600; font-size: 18px;">schedule</span>
-                <span style="font-size: 12px; color: #5f5e5e;">Risk Score: <strong style="color: #181d1a;">{profile.get('risk_score', 0)} pts</strong></span>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    badge_class = 'sp-badge-high' if profile['risk_level'] == 'High' else ('sp-badge-medium' if profile['risk_level'] == 'Medium' else 'sp-badge-low')
+    program = profile.get('program', 'Data Analytics')
+    course_id = profile.get('course_id', 'DATA-101')
+    term = profile.get('term', 'Fall 2026')
+    section = profile.get('section', 'A')
+    cohort_year = profile.get('cohort_year', 2026)
+    risk_score = profile.get('risk_score', 0)
+
+    header_html = f"""<div style="display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid #c4c9ac; padding-bottom: 18px; margin-bottom: 24px; margin-top: 8px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+<div>
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 4px;">
+<h1 style="font-family: 'Geist', sans-serif; font-size: 32px; font-weight: 700; color: #181d1a; margin: 0; letter-spacing: -0.02em;">{profile['student_id']}</h1>
+<span class="sp-badge {badge_class}"><span class="sp-badge-dot"></span> {badge_info['label']}</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; font-family: 'Inter', sans-serif; font-size: 13px; color: #5f5e5e;">
+<span><strong>Program:</strong> {program}</span>
+<span>•</span>
+<span><strong>Course:</strong> {course_id} ({term})</span>
+<span>•</span>
+<span><strong>Section:</strong> {section}</span>
+<span>•</span>
+<span><strong>Cohort:</strong> Class of {cohort_year}</span>
+</div>
+</div>
+<div style="display: flex; gap: 8px; align-items: center;">
+<span class="material-symbols-outlined" style="color: #516600; font-size: 18px;">schedule</span>
+<span style="font-size: 12px; color: #5f5e5e;">Risk Score: <strong style="color: #181d1a;">{risk_score} pts</strong></span>
+</div>
+</div>
+</div>"""
+    st.markdown(header_html, unsafe_allow_html=True)
 
     # -------------------------------------------------------------
     # 2-Column Main Layout: 7 Cols Left, 5 Cols Right
@@ -107,121 +110,106 @@ def render_student_detail_page(service: ReportingService):
         asg_avg = float(profile.get("assignment_average", 75.0))
         asm_avg = float(profile.get("assessment_average", 75.0))
         composite_avg = round((asg_avg + asm_avg) / 2.0, 1)
+        sub_rate = float(profile.get("submission_completion_rate", 100.0))
 
         asg_color = "#ba1a1a" if asg_avg < 50 else ("#d97706" if asg_avg < 70 else "#516600")
         asm_color = "#ba1a1a" if asm_avg < 50 else ("#d97706" if asm_avg < 70 else "#516600")
         comp_color = "#ba1a1a" if composite_avg < 50 else ("#d97706" if composite_avg < 70 else "#516600")
+        sub_color = "#ba1a1a" if sub_rate < 80 else "#516600"
 
-        st.markdown(f"""
-        <div class="sp-card">
-            <div class="sp-card-header">
-                <span style="display: flex; align-items: center; gap: 8px;">
-                    <span class="material-symbols-outlined" style="color: #5f5e5e;">monitoring</span>
-                    Assessment & Performance Progress
-                </span>
-                <span style="font-size: 12px; color: #5f5e5e;">Composite: <strong style="color: {comp_color};">{composite_avg:.1f}%</strong></span>
-            </div>
-            
-            <div style="display: flex; flex-direction: column; gap: 16px;">
-                <div>
-                    <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-                        <span style="font-weight: 500; color: #181d1a;">Examination / Assessment Average</span>
-                        <strong style="color: {asm_color}; font-family: monospace;">{asm_avg:.1f}%</strong>
-                    </div>
-                    <div style="width: 100%; height: 8px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
-                        <div style="width: {min(max(asm_avg, 0), 100)}%; height: 100%; background-color: {asm_color}; border-radius: 9999px;"></div>
-                    </div>
-                </div>
-
-                <div>
-                    <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-                        <span style="font-weight: 500; color: #181d1a;">Assignment Submission Average</span>
-                        <strong style="color: {asg_color}; font-family: monospace;">{asg_avg:.1f}%</strong>
-                    </div>
-                    <div style="width: 100%; height: 8px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
-                        <div style="width: {min(max(asg_avg, 0), 100)}%; height: 100%; background-color: {asg_color}; border-radius: 9999px;"></div>
-                    </div>
-                </div>
-
-                <div>
-                    <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
-                        <span style="font-weight: 500; color: #181d1a;">Submission Completion Rate</span>
-                        <strong style="color: {'#ba1a1a' if profile.get('submission_completion_rate', 100) < 80 else '#516600'}; font-family: monospace;">
-                            {profile.get('submission_completion_rate', 100):.1f}%
-                        </strong>
-                    </div>
-                    <div style="width: 100%; height: 8px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
-                        <div style="width: {min(max(float(profile.get('submission_completion_rate', 100)), 0), 100)}%; height: 100%; background-color: {'#ba1a1a' if profile.get('submission_completion_rate', 100) < 80 else '#516600'}; border-radius: 9999px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        progress_card_html = f"""<div class="sp-card">
+<div class="sp-card-header">
+<span style="display: flex; align-items: center; gap: 8px;">
+<span class="material-symbols-outlined" style="color: #5f5e5e;">monitoring</span>
+Assessment & Performance Progress
+</span>
+<span style="font-size: 12px; color: #5f5e5e;">Composite: <strong style="color: {comp_color};">{composite_avg:.1f}%</strong></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+<span style="font-weight: 500; color: #181d1a;">Examination / Assessment Average</span>
+<strong style="color: {asm_color}; font-family: monospace;">{asm_avg:.1f}%</strong>
+</div>
+<div style="width: 100%; height: 8px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
+<div style="width: {min(max(asm_avg, 0), 100)}%; height: 100%; background-color: {asm_color}; border-radius: 9999px;"></div>
+</div>
+</div>
+<div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+<span style="font-weight: 500; color: #181d1a;">Assignment Submission Average</span>
+<strong style="color: {asg_color}; font-family: monospace;">{asg_avg:.1f}%</strong>
+</div>
+<div style="width: 100%; height: 8px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
+<div style="width: {min(max(asg_avg, 0), 100)}%; height: 100%; background-color: {asg_color}; border-radius: 9999px;"></div>
+</div>
+</div>
+<div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+<span style="font-weight: 500; color: #181d1a;">Submission Completion Rate</span>
+<strong style="color: {sub_color}; font-family: monospace;">{sub_rate:.1f}%</strong>
+</div>
+<div style="width: 100%; height: 8px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
+<div style="width: {min(max(sub_rate, 0), 100)}%; height: 100%; background-color: {sub_color}; border-radius: 9999px;"></div>
+</div>
+</div>
+</div>
+</div>"""
+        st.markdown(progress_card_html, unsafe_allow_html=True)
 
         # 2. Recent Engagement & Attendance Timeline
         att_rate = float(profile.get("attendance_rate", 100.0))
         rec_att = float(profile.get("recent_attendance_rate", att_rate))
         att_history = profile.get("attendance_history", [])
 
+        att_color = "#ba1a1a" if att_rate < 70 else "#516600"
+        rec_color = "#ba1a1a" if rec_att < 70 else "#516600"
+
         session_pills_html = ""
         if att_history:
             for item in att_history[:10]:
                 status = item.get("attendance_status", "Present")
-                dt = str(item.get("session_date", ""))[-5:]  # MM-DD
+                raw_date = str(item.get("session_date", ""))[:10]
+                dt = raw_date[5:] if len(raw_date) >= 10 else raw_date
                 bg = "#dcfce7" if status == "Present" else ("#fef0c7" if status == "Late" else ("#ffdad6" if status == "Absent" else "#e5e9e4"))
                 fg = "#14532d" if status == "Present" else ("#93370d" if status == "Late" else ("#93000a" if status == "Absent" else "#474746"))
-                session_pills_html += f"""<div style="flex: 1; min-width: 40px; text-align: center; background-color: {bg}; color: {fg}; border-radius: 6px; padding: 6px 2px; font-size: 11px; font-weight: 600; border: 1px solid rgba(0,0,0,0.05);">
-<div>{dt}</div>
-<div style="font-size: 9px; text-transform: uppercase;">{status[:3]}</div>
-</div>"""
+                session_pills_html += f"""<div style="flex: 1 1 50px; min-width: 44px; max-width: 70px; text-align: center; background-color: {bg}; color: {fg}; border-radius: 6px; padding: 6px 2px; font-size: 11px; font-weight: 600; border: 1px solid rgba(0,0,0,0.05);"><div style="font-size: 11px; font-family: monospace;">{dt}</div><div style="font-size: 9px; text-transform: uppercase; margin-top: 2px;">{status[:3]}</div></div>"""
         else:
-            session_pills_html = "<div style='font-size: 12px; color: #5f5e5e;'>No session attendance logs recorded for this course.</div>"
+            session_pills_html = "<div style='font-size: 12px; color: #5f5e5e; padding: 4px 0;'>No session attendance logs recorded for this course.</div>"
 
-        st.markdown(f"""
-        <div class="sp-card">
-            <div class="sp-card-header">
-                <span style="display: flex; align-items: center; gap: 8px;">
-                    <span class="material-symbols-outlined" style="color: #5f5e5e;">calendar_today</span>
-                    Recent Engagement & Attendance Breakdown
-                </span>
-                <span style="font-size: 12px; color: #5f5e5e;">Term Attendance: <strong style="color: {'#ba1a1a' if att_rate < 70 else '#516600'};">{att_rate:.1f}%</strong></span>
-            </div>
-
-            <div style="margin-bottom: 16px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #5f5e5e; font-family: 'Geist', sans-serif;">
-                        Recent 14-Day Trajectory
-                    </span>
-                    <span style="font-size: 12px; font-weight: 600; color: {'#ba1a1a' if rec_att < 70 else '#516600'};">
-                        {rec_att:.1f}% (Recent 2-Week Window)
-                    </span>
-                </div>
-                <div style="width: 100%; height: 8px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
-                    <div style="width: {min(max(rec_att, 0), 100)}%; height: 100%; background-color: {'#ba1a1a' if rec_att < 70 else '#516600'}; border-radius: 9999px;"></div>
-                </div>
-            </div>
-
-            <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #5f5e5e; font-family: 'Geist', sans-serif; margin-bottom: 8px;">
-                Recent Session Log (Latest 10 Sessions)
-            </div>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                {session_pills_html}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        attendance_card_html = f"""<div class="sp-card">
+<div class="sp-card-header">
+<span style="display: flex; align-items: center; gap: 8px;">
+<span class="material-symbols-outlined" style="color: #5f5e5e;">calendar_today</span>
+Recent Engagement & Attendance Breakdown
+</span>
+<span style="font-size: 12px; color: #5f5e5e;">Term Attendance: <strong style="color: {att_color};">{att_rate:.1f}%</strong></span>
+</div>
+<div style="margin-bottom: 16px;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+<span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #5f5e5e; font-family: 'Geist', sans-serif;">
+Recent 14-Day Trajectory
+</span>
+<span style="font-size: 12px; font-weight: 600; color: {rec_color};">
+{rec_att:.1f}% (Recent 2-Week Window)
+</span>
+</div>
+<div style="width: 100%; height: 8px; background-color: #ebefea; border-radius: 9999px; overflow: hidden;">
+<div style="width: {min(max(rec_att, 0), 100)}%; height: 100%; background-color: {rec_color}; border-radius: 9999px;"></div>
+</div>
+</div>
+<div style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #5f5e5e; font-family: 'Geist', sans-serif; margin-bottom: 8px;">
+Recent Session Log (Latest 10 Sessions)
+</div>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+{session_pills_html}
+</div>
+</div>"""
+        st.markdown(attendance_card_html, unsafe_allow_html=True)
 
         # 3. Assignment Status Checklist
         asg_history = profile.get("assignment_history", [])
-        st.markdown("""
-        <div class="sp-card">
-            <div class="sp-card-header">
-                <span style="display: flex; align-items: center; gap: 8px;">
-                    <span class="material-symbols-outlined" style="color: #5f5e5e;">assignment</span>
-                    Course Assignment Submissions
-                </span>
-            </div>
-        """, unsafe_allow_html=True)
-
+        asg_items_html = ""
         if asg_history:
             for asg in asg_history:
                 asg_id = asg.get("assignment_id", "Assignment")
@@ -246,74 +234,59 @@ def render_student_detail_page(service: ReportingService):
                     score_display = f"<span style='font-family: monospace; font-weight: 600; color: #516600;'>{score:.1f} / {max_s:.0f}</span>" if score is not None else "Pending Grading"
                     bg_style = "background-color: #ffffff; border: 1px solid #ebefea;"
 
-                st.markdown(f"""
-                <div style="{bg_style} border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-                    <div>
-                        <div style="font-weight: 600; font-size: 13px; color: #181d1a;">{asg_id}</div>
-                        <div style="font-size: 11px; color: #5f5e5e;">Due: {due} {f'• Submitted: {str(sub)[:16]}' if sub else ''}</div>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        {score_display}
-                        {status_badge}
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
+                sub_text = f" • Submitted: {str(sub)[:16]}" if sub else ""
+                asg_items_html += f"""<div style="{bg_style} border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;"><div><div style="font-weight: 600; font-size: 13px; color: #181d1a;">{asg_id}</div><div style="font-size: 11px; color: #5f5e5e;">Due: {due}{sub_text}</div></div><div style="display: flex; align-items: center; gap: 12px;">{score_display}{status_badge}</div></div>"""
         else:
-            st.info("No assignments recorded for this course.")
+            asg_items_html = "<div style='font-size: 12px; color: #5f5e5e; padding: 8px 0;'>No assignments recorded for this course.</div>"
 
-        st.markdown("</div>", unsafe_allow_html=True)
+        asg_card_html = f"""<div class="sp-card">
+<div class="sp-card-header">
+<span style="display: flex; align-items: center; gap: 8px;">
+<span class="material-symbols-outlined" style="color: #5f5e5e;">assignment</span>
+Course Assignment Submissions
+</span>
+</div>
+<div style="margin-top: 12px;">
+{asg_items_html}
+</div>
+</div>"""
+        st.markdown(asg_card_html, unsafe_allow_html=True)
 
     with col_right:
         # 1. Why this student was flagged Card (Matches Stitch design)
-        st.markdown(f"""
-        <div class="sp-card" style="border-top: 4px solid {badge_info['dot']};">
-            <h3 style="font-family: 'Geist', sans-serif; font-size: 17px; font-weight: 600; color: #181d1a; margin: 0 0 16px 0;">
-                Why this student was flagged
-            </h3>
-        """, unsafe_allow_html=True)
-
+        reasons_html = ""
         if reasons:
             for r in reasons:
                 pts = r.get("points", 2)
                 lbl = r.get("label", "Engagement indicator")
                 desc = r.get("description", "")
-                st.markdown(f"""
-                <div style="border-bottom: 1px solid #ebefea; padding-bottom: 12px; margin-bottom: 12px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                        <span style="font-size: 13px; font-weight: 600; color: #181d1a;">{lbl}</span>
-                        <span class="sp-points-pill">+{pts} pts</span>
-                    </div>
-                    <p style="font-size: 12px; color: #5f5e5e; margin: 0; line-height: 1.4;">
-                        {desc}
-                    </p>
-                </div>
-                """, unsafe_allow_html=True)
+                reasons_html += f"""<div style="border-bottom: 1px solid #ebefea; padding-bottom: 12px; margin-bottom: 12px;"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 600; color: #181d1a;">{lbl}</span><span class="sp-points-pill">+{pts} pts</span></div><p style="font-size: 12px; color: #5f5e5e; margin: 0; line-height: 1.4;">{desc}</p></div>"""
         else:
-            st.markdown("""
-            <div style="background-color: #dcfce7; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px; color: #14532d; font-size: 13px;">
-                ✓ No active risk thresholds triggered. All engagement indicators remain on track.
-            </div>
-            """, unsafe_allow_html=True)
+            reasons_html = """<div style="background-color: #dcfce7; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px; color: #14532d; font-size: 13px;">✓ No active risk thresholds triggered. All engagement indicators remain on track.</div>"""
 
-        st.markdown("</div>", unsafe_allow_html=True)
+        why_card_html = f"""<div class="sp-card" style="border-top: 4px solid {badge_info['dot']};">
+<h3 style="font-family: 'Geist', sans-serif; font-size: 17px; font-weight: 600; color: #181d1a; margin: 0 0 16px 0;">
+Why this student was flagged
+</h3>
+{reasons_html}
+</div>"""
+        st.markdown(why_card_html, unsafe_allow_html=True)
 
         # 2. Suggested Next Step & Support Action Form
-        st.markdown(f"""
-        <div class="sp-card">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: #516600;">
-                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-                <h3 style="font-family: 'Geist', sans-serif; font-size: 16px; font-weight: 600; color: #181d1a; margin: 0;">
-                    Suggested Next Step
-                </h3>
-            </div>
-            
-            <div style="background-color: #f7faf5; border: 1px solid #c4c9ac; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 13px; color: #181d1a; line-height: 1.5;">
-                    {action_info['description']}
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        suggested_step_html = f"""<div class="sp-card">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: #516600;">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h3 style="font-family: 'Geist', sans-serif; font-size: 16px; font-weight: 600; color: #181d1a; margin: 0;">
+Suggested Next Step
+</h3>
+</div>
+<div style="background-color: #f7faf5; border: 1px solid #c4c9ac; border-radius: 8px; padding: 14px; margin-bottom: 4px;">
+<div style="font-family: 'Inter', sans-serif; font-size: 13px; color: #181d1a; line-height: 1.5;">
+{action_info['description']}
+</div>
+</div>
+</div>"""
+        st.markdown(suggested_step_html, unsafe_allow_html=True)
 
         # Support Action Logging Form
         with st.form(key=f"support_action_form_{sel_id}"):
@@ -358,39 +331,25 @@ def render_student_detail_page(service: ReportingService):
 
         # 3. Historical Actions Timeline
         interventions = profile.get("interventions", [])
-        st.markdown("""
-        <div class="sp-card" style="margin-top: 20px;">
-            <div class="sp-card-header" style="margin-bottom: 12px;">
-                <span style="font-size: 13px; text-transform: uppercase; color: #5f5e5e; font-family: 'Geist', sans-serif;">
-                    Historical Actions & Notes
-                </span>
-            </div>
-        """, unsafe_allow_html=True)
-
+        interventions_html = ""
         if interventions:
             for item in interventions:
                 act_date = str(item.get("action_date", ""))[:16]
                 act_type = item.get("action_type", "Advisory Note")
                 note_txt = item.get("outcome_note", "")
                 staff = item.get("staff_user", "Advisor")
-                st.markdown(f"""
-                <div style="background-color: #f7faf5; border: 1px solid #ebefea; border-radius: 8px; padding: 12px; margin-bottom: 10px;">
-                    <div style="display: flex; justify-content: space-between; font-size: 11px; color: #5f5e5e; margin-bottom: 4px;">
-                        <strong>{act_type}</strong>
-                        <span>{act_date} ({staff})</span>
-                    </div>
-                    <p style="font-size: 12px; color: #181d1a; margin: 0; line-height: 1.4;">
-                        "{note_txt}"
-                    </p>
-                </div>
-                """, unsafe_allow_html=True)
+                interventions_html += f"""<div style="background-color: #f7faf5; border: 1px solid #ebefea; border-radius: 8px; padding: 12px; margin-bottom: 10px;"><div style="display: flex; justify-content: space-between; font-size: 11px; color: #5f5e5e; margin-bottom: 4px;"><strong>{act_type}</strong><span>{act_date} ({staff})</span></div><p style="font-size: 12px; color: #181d1a; margin: 0; line-height: 1.4;">"{note_txt}"</p></div>"""
         else:
-            st.markdown("""
-            <div style="font-size: 12px; color: #5f5e5e; font-style: italic;">
-                No historical support actions logged for this student yet.
-            </div>
-            """, unsafe_allow_html=True)
+            interventions_html = """<div style="font-size: 12px; color: #5f5e5e; font-style: italic;">No historical support actions logged for this student yet.</div>"""
 
-        st.markdown("</div>", unsafe_allow_html=True)
+        history_card_html = f"""<div class="sp-card" style="margin-top: 20px;">
+<div class="sp-card-header" style="margin-bottom: 12px;">
+<span style="font-size: 13px; text-transform: uppercase; color: #5f5e5e; font-family: 'Geist', sans-serif;">
+Historical Actions & Notes
+</span>
+</div>
+{interventions_html}
+</div>"""
+        st.markdown(history_card_html, unsafe_allow_html=True)
 
     render_disclaimer()
