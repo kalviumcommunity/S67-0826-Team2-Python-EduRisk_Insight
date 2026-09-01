@@ -28,12 +28,14 @@ def test_demo_database_has_explainable_risk_records():
     assert invalid == 0
     assert unexplained == 0
     if total == 0:
-        # If active DB is clean/empty, verify explainability on a pipeline run
+        # If active DB is clean/empty, verify explainability on a synthetic pipeline run
         from src.pipeline import run_pipeline
+        from scripts.generate_data import generate_synthetic_academic_dataset
         import tempfile
         with tempfile.TemporaryDirectory() as tmp_dir:
             test_db = Path(tmp_dir) / "test.db"
-            raw_source = Path("data/mock_backup") if Path("data/mock_backup").exists() else Path("data/raw")
+            raw_source = Path(tmp_dir) / "raw"
+            generate_synthetic_academic_dataset(target_enrolments=30, output_dir=raw_source, fixtures_dir=Path(tmp_dir) / "fixtures")
             run_pipeline(raw_dir=raw_source, db_path=test_db, processed_dir=Path(tmp_dir) / "proc")
             db_test = DatabaseManager(test_db)
             total_t = db_test.execute_query("SELECT COUNT(*) AS c FROM risk_assessments")[0]["c"]

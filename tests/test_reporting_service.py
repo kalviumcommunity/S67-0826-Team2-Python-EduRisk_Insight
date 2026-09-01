@@ -15,7 +15,9 @@ from src.reporting import ReportingService, OverviewMetrics
 def service(tmp_path):
     """Initializes ReportingService with an active SQLite test database."""
     test_db = tmp_path / "test_reporting.db"
-    raw_source = Path("data/mock_backup") if Path("data/mock_backup").exists() else Path("data/raw")
+    raw_source = tmp_path / "raw"
+    from scripts.generate_data import generate_synthetic_academic_dataset
+    generate_synthetic_academic_dataset(target_enrolments=30, output_dir=raw_source, fixtures_dir=tmp_path / "fixtures")
     from src.pipeline import run_pipeline
     run_pipeline(raw_dir=raw_source, db_path=test_db, processed_dir=tmp_path / "processed")
     db = DatabaseManager(db_path=test_db)

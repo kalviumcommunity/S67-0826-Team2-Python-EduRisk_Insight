@@ -18,7 +18,9 @@ def test_end_to_end_pipeline_execution():
         test_db = tmp_path / "test_studentpulse.db"
         test_processed = tmp_path / "processed"
 
-        raw_source = Path("data/mock_backup") if (Path("data/mock_backup").exists() and (Path("data/mock_backup/students.csv").stat().st_size > 50)) else Path("data/raw")
+        raw_source = tmp_path / "raw"
+        from scripts.generate_data import generate_synthetic_academic_dataset
+        generate_synthetic_academic_dataset(target_enrolments=30, output_dir=raw_source, fixtures_dir=tmp_path / "fixtures")
         result = run_pipeline(
             raw_dir=raw_source,
             db_path=test_db,
