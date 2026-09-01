@@ -22,7 +22,7 @@
 | PR #10 | 🟢 | Pipeline Orchestration | src/pipeline.py | 2.13, 2.58 |
 | PR #11 | 🟢 | Backend Testing | tests/ | Backend testing |
 | PR #12 | 🟢 | Backend Integration | backend integration | 2.13, 2.26, 2.58 |
-| PR #13 | ⬜ | Automated Pipeline Execution | pipeline/scripts | 2.13, 2.58 |
+| PR #13 | 🟢 | Automated Pipeline Execution | pipeline/scripts | 2.13, 2.58 |
 | PR #14 | ⬜ | GitHub Validation / CI | .github/workflows/ | 2.59 |
 | PR #15 | ⬜ | Backend Documentation & Delivery | README/docs | 2.60 |
 
@@ -326,6 +326,32 @@ Result:
 - High-performance SQL reporting views created for zero-latency dashboard queries (`sql/reporting_views.sql`: `v_overview_kpis`, `v_risk_explorer`, `v_course_risk_summary`, `v_student_detail`, `v_data_quality_summary`)
 - Fully decoupled ReportingService layer with multi-dimensional filtering, student detail lookups, intervention action persistence, and top insight generation (`src/reporting.py`)
 - Dual SQL validation queries implemented (`sql/kpi_validation.sql`)
+
+---
+
+### PR #13
+Status: 🟢 PR Created
+Branch: backend/lu-automation
+Commit: e379c5feeb8169fb66c61bf8e1b64e0624a0d922
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-automation
+Date: 2026-09-01
+
+Files:
+- scripts/generate_data.py
+- scripts/run_pipeline.py
+- scripts/validate_kpis.py
+- scripts/health_check.py
+
+LU:
+- 2.13
+- 2.58
+
+Result:
+- CLI pipeline execution runner with formatted duration, throughput, and risk distribution diagnostics (`scripts/run_pipeline.py`)
+- Deterministic synthetic dataset generator producing authentic student engagement archetypes (A through F) and invalid quality fixtures (`scripts/generate_data.py`)
+- Dual-engine SQL vs. Python KPI parity auditor (`scripts/validate_kpis.py`)
+- System-wide acceptance and database health check script (`scripts/health_check.py`)
+
 
 
 
