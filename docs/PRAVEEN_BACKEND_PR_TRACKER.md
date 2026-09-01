@@ -19,7 +19,7 @@
 | PR #7 | 🟢 | Trend & Behaviour Analysis | src/analytics/ | 2.29, 2.31, 2.32 |
 | PR #8 | 🟢 | KPI & Business Metrics | analytics/KPI logic | 2.6, 2.30, 2.34 |
 | PR #9 | 🟢 | Insights & Anomaly Detection | src/insights.py | 2.28, 2.29, 2.35, 2.36 |
-| PR #10 | ⬜ | Pipeline Orchestration | src/pipeline.py | 2.13, 2.58 |
+| PR #10 | 🟢 | Pipeline Orchestration | src/pipeline.py | 2.13, 2.58 |
 | PR #11 | ⬜ | Backend Testing | tests/ | Backend testing |
 | PR #12 | ⬜ | Backend Integration | backend integration | 2.13, 2.26, 2.58 |
 | PR #13 | ⬜ | Automated Pipeline Execution | pipeline/scripts | 2.13, 2.58 |
@@ -252,6 +252,30 @@ Result:
 - Produces evidence-backed, explainable findings across section risk concentration, primary risk indicator drivers, and 14-day engagement trajectories
 - Dynamic fallback handling for empty or unpopulated cohorts
 - 3 unit tests in `tests/test_insights.py` passed (100%), full test suite (59 tests) passing (100%)
+
+---
+
+### PR #10
+Status: 🟢 PR Created
+Branch: backend/lu-pipeline
+Commit: 1834897ff76868df3260c6ae53d1ec5cfcb0e3a5
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-pipeline
+Date: 2026-09-01
+
+Files:
+- src/pipeline.py
+- tests/test_pipeline.py
+
+LU:
+- 2.13
+- 2.58
+
+Result:
+- End-to-end data pipeline orchestrator implemented (`run_pipeline`, `PipelineRunResult`)
+- Fully orchestrates Ingestion -> 14-rule Data Validation -> Cleaning & Transformation -> Feature Computation -> Risk Scoring -> SQLite Persistence
+- Generates snapshot outputs in `data/processed/` and logs pipeline audit run records in `pipeline_runs` table
+- 1 unit test in `tests/test_pipeline.py` passed (100%), full test suite (59 tests) passing (100%)
+
 
 
 
