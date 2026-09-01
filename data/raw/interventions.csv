@@ -1,1 +1,25 @@
 student_id,course_id,action_date,action_type,outcome_note,staff_user
+STU-1019,CS-204,2026-10-05 11:30:00,Attendance Nudge Email,Attendance reviewed with student; student acknowledged recent absences and committed to improving class participation.,Dr. Maya
+STU-1019,CS-204,2026-10-20 14:00:00,Office Hours Meeting,Discussed workload and assessment performance; student agreed to a weekly study plan and follow-up check-in.,Dr. Maya
+STU-1020,CS-204,2026-10-05 11:30:00,Attendance Nudge Email,Attendance reviewed with student; student acknowledged recent absences and committed to improving class participation.,Dr. Maya
+STU-1020,CS-204,2026-10-20 14:00:00,Office Hours Meeting,Discussed workload and assessment performance; student agreed to a weekly study plan and follow-up check-in.,Dr. Maya
+STU-1021,STAT-301,2026-10-05 11:30:00,Attendance Nudge Email,Attendance reviewed with student; student acknowledged recent absences and committed to improving class participation.,Dr. Maya
+STU-1021,STAT-301,2026-10-20 14:00:00,Office Hours Meeting,Discussed workload and assessment performance; student agreed to a weekly study plan and follow-up check-in.,Dr. Maya
+STU-1022,STAT-301,2026-10-05 11:30:00,Attendance Nudge Email,Attendance reviewed with student; student acknowledged recent absences and committed to improving class participation.,Dr. Maya
+STU-1022,STAT-301,2026-10-20 14:00:00,Office Hours Meeting,Discussed workload and assessment performance; student agreed to a weekly study plan and follow-up check-in.,Dr. Maya
+STU-1023,STAT-301,2026-10-05 11:30:00,Attendance Nudge Email,Attendance reviewed with student; student acknowledged recent absences and committed to improving class participation.,Dr. Maya
+STU-1023,STAT-301,2026-10-20 14:00:00,Office Hours Meeting,Discussed workload and assessment performance; student agreed to a weekly study plan and follow-up check-in.,Dr. Maya
+STU-1024,STAT-301,2026-10-05 11:30:00,Attendance Nudge Email,Attendance reviewed with student; student acknowledged recent absences and committed to improving class participation.,Dr. Maya
+STU-1024,STAT-301,2026-10-20 14:00:00,Office Hours Meeting,Discussed workload and assessment performance; student agreed to a weekly study plan and follow-up check-in.,Dr. Maya
+STU-1025,STAT-301,2026-09-22 09:30:00,1:1 Advisor Check-in,Student identified reduced engagement and difficulty maintaining attendance; an attendance recovery plan was discussed.,Dr. Maya
+STU-1025,STAT-301,2026-10-08 15:00:00,Tutoring Center Referral,Student referred for academic support following low assessment results and multiple missing assignments; follow-up recommended.,Dr. Maya
+STU-1026,STAT-301,2026-09-22 09:30:00,1:1 Advisor Check-in,Student identified reduced engagement and difficulty maintaining attendance; an attendance recovery plan was discussed.,Dr. Maya
+STU-1026,STAT-301,2026-10-08 15:00:00,Tutoring Center Referral,Student referred for academic support following low assessment results and multiple missing assignments; follow-up recommended.,Dr. Maya
+STU-1027,STAT-301,2026-09-22 09:30:00,1:1 Advisor Check-in,Student identified reduced engagement and difficulty maintaining attendance; an attendance recovery plan was discussed.,Dr. Maya
+STU-1027,STAT-301,2026-10-08 15:00:00,Tutoring Center Referral,Student referred for academic support following low assessment results and multiple missing assignments; follow-up recommended.,Dr. Maya
+STU-1028,STAT-301,2026-09-22 09:30:00,1:1 Advisor Check-in,Student identified reduced engagement and difficulty maintaining attendance; an attendance recovery plan was discussed.,Dr. Maya
+STU-1028,STAT-301,2026-10-08 15:00:00,Tutoring Center Referral,Student referred for academic support following low assessment results and multiple missing assignments; follow-up recommended.,Dr. Maya
+STU-1029,STAT-301,2026-09-22 09:30:00,1:1 Advisor Check-in,Student identified reduced engagement and difficulty maintaining attendance; an attendance recovery plan was discussed.,Dr. Maya
+STU-1029,STAT-301,2026-10-08 15:00:00,Tutoring Center Referral,Student referred for academic support following low assessment results and multiple missing assignments; follow-up recommended.,Dr. Maya
+STU-1030,STAT-301,2026-09-22 09:30:00,1:1 Advisor Check-in,Student identified reduced engagement and difficulty maintaining attendance; an attendance recovery plan was discussed.,Dr. Maya
+STU-1030,STAT-301,2026-10-08 15:00:00,Tutoring Center Referral,Student referred for academic support following low assessment results and multiple missing assignments; follow-up recommended.,Dr. Maya

@@ -75,55 +75,60 @@ def render_data_quality_page(service: ReportingService):
         "interventions.csv": {"label": "6. Interventions (interventions.csv — optional)", "req_cols": ["student_id", "course_id", "action_date"], "required": False},
     }
 
+    from src.ingest import split_unified_dataframe
+
     # Multi-file drag and drop uploader
     uploaded_files = st.file_uploader(
-        "Drop all CSV files here (students.csv, enrolments.csv, attendance.csv, assignments.csv, assessments.csv, interventions.csv)",
+        "Drop CSV files here — accepts single unified dataset (e.g. studentpulse_complete.csv) or individual files (students.csv, enrolments.csv, attendance.csv, assignments.csv, assessments.csv, interventions.csv)",
         type=["csv"],
         accept_multiple_files=True,
         key="multi_csv_uploader"
     )
 
-    detected_files = {}
+    detected_dfs: Dict[str, pd.DataFrame] = {}
+
     if uploaded_files:
         for f in uploaded_files:
             fname = f.name.lower()
-            # Match by exact name or header inspection
-            matched = False
-            for target_name, spec in upload_specs.items():
-                if target_name in fname:
-                    detected_files[target_name] = f
-                    matched = True
-                    break
-            if not matched:
-                try:
-                    f.seek(0)
-                    first_line = f.readline().decode("utf-8", errors="ignore").lower()
-                    f.seek(0)
+            try:
+                f.seek(0)
+                df_loaded = pd.read_csv(f)
+                f.seek(0)
+
+                # Check if this is a unified/consolidated dataset with record_type
+                if "record_type" in df_loaded.columns:
+                    split_dict = split_unified_dataframe(df_loaded)
+                    for t_name, sub_df in split_dict.items():
+                        detected_dfs[f"{t_name}.csv"] = sub_df
+                    st.info(f"💡 Detected unified dataset in `{f.name}`. Automatically extracted {len(split_dict)} tables!")
+                else:
+                    # Match discrete CSV by filename or headers
+                    matched = False
                     for target_name, spec in upload_specs.items():
-                        if all(rc in first_line for rc in spec["req_cols"][:2]):
-                            detected_files[target_name] = f
+                        if target_name in fname:
+                            detected_dfs[target_name] = df_loaded
+                            matched = True
                             break
-                except Exception:
-                    pass
+                    if not matched:
+                        for target_name, spec in upload_specs.items():
+                            if all(rc in df_loaded.columns for rc in spec["req_cols"][:2]):
+                                detected_dfs[target_name] = df_loaded
+                                break
+            except Exception as e:
+                st.error(f"Error parsing {f.name}: {e}")
 
     # Status Grid for uploaded files
     status_cols = st.columns(3)
     for idx, (target_name, spec) in enumerate(upload_specs.items()):
         with status_cols[idx % 3]:
-            is_loaded = target_name in detected_files
+            is_loaded = target_name in detected_dfs
             status_color = "#516600" if is_loaded else ("#ba1a1a" if spec["required"] else "#5f5e5e")
-            status_icon = "check_circle" if is_loaded else ("cancel" if spec["required"] else "radio_button_unchecked")
             status_text = "Ready to Ingest" if is_loaded else ("Required" if spec["required"] else "Optional")
             
             row_count_str = ""
             if is_loaded:
-                try:
-                    detected_files[target_name].seek(0)
-                    df_peek = pd.read_csv(detected_files[target_name])
-                    detected_files[target_name].seek(0)
-                    row_count_str = f"<div style='font-size: 11px; color: #516600;'>{len(df_peek):,} records detected</div>"
-                except Exception:
-                    row_count_str = "<div style='font-size: 11px; color: #516600;'>Loaded</div>"
+                n_rows = len(detected_dfs[target_name])
+                row_count_str = f"<div style='font-size: 11px; color: #516600;'>{n_rows:,} records detected</div>"
 
             st.markdown(f"""
             <div style="padding: 10px 14px; background-color: #ffffff; border: 1px solid #ebefea; border-radius: 8px; margin-bottom: 10px;">
@@ -135,7 +140,7 @@ def render_data_quality_page(service: ReportingService):
             </div>
             """, unsafe_allow_html=True)
 
-    has_required_files = all(k in detected_files for k in ["students.csv", "enrolments.csv", "attendance.csv", "assignments.csv", "assessments.csv"])
+    has_required_files = all(k in detected_dfs for k in ["students.csv", "enrolments.csv", "attendance.csv", "assignments.csv", "assessments.csv"])
 
     act_col1, act_col2 = st.columns([2, 1])
     with act_col1:
@@ -150,13 +155,12 @@ def render_data_quality_page(service: ReportingService):
                 raw_dir = Path("data/raw")
                 raw_dir.mkdir(parents=True, exist_ok=True)
                 
-                # Save each uploaded file to data/raw/
-                for target_name, file_obj in detected_files.items():
-                    file_obj.seek(0)
-                    (raw_dir / target_name).write_bytes(file_obj.getvalue())
+                # Save each dataframe to data/raw/
+                for target_name, df_obj in detected_dfs.items():
+                    df_obj.to_csv(raw_dir / target_name, index=False)
 
                 # If interventions was not uploaded, create empty template if not existing
-                if "interventions.csv" not in detected_files and not (raw_dir / "interventions.csv").exists():
+                if "interventions.csv" not in detected_dfs and not (raw_dir / "interventions.csv").exists():
                     (raw_dir / "interventions.csv").write_text("student_id,course_id,action_date,action_type,outcome_note,staff_user\n")
 
                 # Run full end-to-end pipeline
@@ -170,7 +174,7 @@ def render_data_quality_page(service: ReportingService):
 
     with act_col2:
         if not has_required_files and uploaded_files:
-            missing = [k for k in ["students.csv", "enrolments.csv", "attendance.csv", "assignments.csv", "assessments.csv"] if k not in detected_files]
+            missing = [k for k in ["students.csv", "enrolments.csv", "attendance.csv", "assignments.csv", "assessments.csv"] if k not in detected_dfs]
             st.warning(f"Missing: {', '.join(missing)}")
 
     st.markdown("</div>", unsafe_allow_html=True)
