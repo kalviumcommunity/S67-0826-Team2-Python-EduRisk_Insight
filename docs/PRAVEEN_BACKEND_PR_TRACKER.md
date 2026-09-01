@@ -23,7 +23,7 @@
 | PR #11 | 🟢 | Backend Testing | tests/ | Backend testing |
 | PR #12 | 🟢 | Backend Integration | backend integration | 2.13, 2.26, 2.58 |
 | PR #13 | 🟢 | Automated Pipeline Execution | pipeline/scripts | 2.13, 2.58 |
-| PR #14 | ⬜ | GitHub Validation / CI | .github/workflows/ | 2.59 |
+| PR #14 | 🟢 | GitHub Validation / CI | .github/workflows/ | 2.59 |
 | PR #15 | ⬜ | Backend Documentation & Delivery | README/docs | 2.60 |
 
 ## Completed PRs
@@ -351,6 +351,26 @@ Result:
 - Deterministic synthetic dataset generator producing authentic student engagement archetypes (A through F) and invalid quality fixtures (`scripts/generate_data.py`)
 - Dual-engine SQL vs. Python KPI parity auditor (`scripts/validate_kpis.py`)
 - System-wide acceptance and database health check script (`scripts/health_check.py`)
+
+---
+
+### PR #14
+Status: 🟢 PR Created
+Branch: backend/lu-ci-workflow
+Commit: 1960763f03b57e7eb3e2ea55ebc40efcb943187c
+PR: https://github.com/kalviumcommunity/S67-0826-Team2-Python-EduRisk_Insight/pull/new/backend/lu-ci-workflow
+Date: 2026-09-01
+
+Files:
+- .github/workflows/ci.yml
+
+LU:
+- 2.59
+
+Result:
+- GitHub Actions CI workflow configured for automated continuous validation on pushes to `main` and `backend/**` branches as well as pull requests
+- Executes Python 3.12 environment setup, pip dependency installation, synthetic dataset generation, pipeline execution, SQL KPI audit, health check verification, and full pytest regression suite
+
 
 
 
